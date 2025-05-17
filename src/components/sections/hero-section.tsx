@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { DownloadCVButton } from '@/components/download-cv-button';
 import { Mail } from 'lucide-react';
 import { javaCodeSnippets } from '@/data/hero-data';
-import BlobImage from '../blob-image'; // Import the new BlobImage component
+import BlobImage from '../blob-image'; // Import the BlobImage component
 
 export function HeroSection() {
   return (
@@ -41,12 +41,14 @@ export function HeroSection() {
           </div>
           
           <div className="relative w-full max-w-md mx-auto md:max-w-lg h-80 md:h-[500px] group flex items-center justify-center">
+            {/* Animated background blur effect for visual depth */}
             <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse md:block hidden"></div>
             
             <BlobImage
-              imageUrl="https://placehold.co/480x480.png" // Placeholder or use "/images/profile.jpg"
+              imageUrl="https://placehold.co/480x480.png" // Replace with "/images/profile.jpg" once your image is in public/images/
               alt="Ashish Kumar Rajak - Java Full Stack Developer"
               className="relative z-10 w-64 h-64 md:w-80 md:h-80 transform transition-transform duration-500 group-hover:scale-105"
+              // data-ai-hint is not applicable here as BlobImage is not a next/image component
             />
 
             {/* Positioning snippets relative to the main container, not the image directly */}
