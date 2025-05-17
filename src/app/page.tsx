@@ -2,11 +2,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Code, Briefcase, Zap, Puzzle, Quote, TerminalSquare, MessageCircle, TrendingUp, Code2, Download, Mail } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { ArrowRight, Code, Briefcase, Zap, Puzzle, Quote, TerminalSquare, MessageCircle, TrendingUp, Code2, Mail } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { FlippableContactCard } from '@/components/flippable-contact-card';
+import { DownloadCVButton } from '@/components/download-cv-button'; // Import the new component
 
 export default function HomePage() {
   const javaCodeSnippets = [
@@ -120,15 +121,7 @@ export default function HomePage() {
                     <Mail className="ml-2 h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="group relative inline-flex items-center justify-center px-8 py-3 text-lg font-medium border-primary text-primary hover:bg-primary/10 transition-all duration-300 ease-in-out overflow-hidden rounded-lg shadow-lg hover:shadow-xl"
-                  onClick={() => window.open('/alex-johnson-cv.pdf', '_blank')} // Placeholder for CV download
-                >
-                    Download CV
-                    <Download className="ml-2 h-5 w-5 transform transition-transform duration-300 group-hover:scale-110" />
-                </Button>
+                <DownloadCVButton /> {/* Use the new Client Component here */}
               </div>
             </div>
             
