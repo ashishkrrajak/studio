@@ -48,8 +48,8 @@ export function HeroSection() {
               width={600}
               height={700}
               priority
-              className="rounded-lg object-cover shadow-2xl border-2 border-card/50 relative z-10 transform transition-transform duration-500 group-hover:scale-105"
-              data-ai-hint="developer professional"
+              className="rounded-lg object-cover shadow-2xl relative z-10 transform transition-transform duration-500 group-hover:scale-105"
+              data-ai-hint="profile picture background removal"
             />
             {javaCodeSnippets.map((snippet, index) => (
               <div
