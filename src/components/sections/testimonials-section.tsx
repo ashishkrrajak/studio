@@ -9,8 +9,8 @@ import { Quote } from 'lucide-react';
 import { testimonials } from '@/data/testimonials-data';
 import type { Testimonial } from '@/types';
 
-const FADE_DURATION = 300; // ms
-const CYCLE_INTERVAL = 3000; // ms
+const FADE_DURATION = 500; // ms, increased from 300
+const CYCLE_INTERVAL = 3000; // ms, time testimonial is visible before starting to fade out
 
 export function TestimonialsSection() {
   const [displayIndex, setDisplayIndex] = React.useState(0);
@@ -19,10 +19,10 @@ export function TestimonialsSection() {
   const timerRef = React.useRef<NodeJS.Timeout | null>(null);
 
   const handleCycle = React.useCallback(() => {
-    setIsTransitioning(true);
+    setIsTransitioning(true); // Start fade-out
     setTimeout(() => {
       setDisplayIndex(prevIndex => (prevIndex + 1) % testimonials.length);
-      setIsTransitioning(false);
+      setIsTransitioning(false); // Content updated, start fade-in
     }, FADE_DURATION);
   }, []);
 
@@ -35,8 +35,10 @@ export function TestimonialsSection() {
       return;
     }
 
-    timerRef.current = setInterval(handleCycle, CYCLE_INTERVAL);
+    // Set up the interval
+    timerRef.current = setInterval(handleCycle, CYCLE_INTERVAL + FADE_DURATION); // Add FADE_DURATION to cycle for visible time
 
+    // Clear interval on component unmount
     return () => {
       if (timerRef.current) {
         clearInterval(timerRef.current);
@@ -68,7 +70,7 @@ export function TestimonialsSection() {
         >
           {currentTestimonial && (
             <Card
-              className={`w-full h-full bg-card shadow-xl border-border/70 flex flex-col transition-opacity duration-${FADE_DURATION} ease-in-out ${
+              className={`w-full h-full bg-card shadow-xl border-border/70 flex flex-col transition-opacity duration-500 ease-in-out ${ // duration-500
                 isTransitioning ? 'opacity-0' : 'opacity-100'
               }`}
             >
