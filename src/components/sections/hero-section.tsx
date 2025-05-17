@@ -43,7 +43,7 @@ export function HeroSection() {
           <div className="relative w-full max-w-md mx-auto md:max-w-lg h-80 md:h-[500px] group">
             <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse"></div>
             <Image
-              src="https://placehold.co/800x800.png" 
+              src="/images/profile.jpg" 
               alt="Ashish Kumar Rajak - Java Full Stack Developer"
               width={800}
               height={800}
@@ -55,7 +55,7 @@ export function HeroSection() {
               <div
                 key={index}
                 className={`absolute font-mono text-xs md:text-sm text-foreground/70 ${snippet.opacity} transform group-hover:scale-110 transition-all duration-500 animate-fadeIn`}
-                style={{ top: snippet.top, left: snippet.left, animationDelay: snippet.animationDelay }}
+                style={{ animationDelay: snippet.animationDelay, top: snippet.top, left: snippet.left }}
               >
                 {snippet.text}
               </div>
