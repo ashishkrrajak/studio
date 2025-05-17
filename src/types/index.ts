@@ -22,3 +22,8 @@ export interface CodingProfile {
   icon: React.ElementType;
   username: string;
 }
+
+export interface SkillItem {
+  name: string;
+  icon: React.ElementType;
+}

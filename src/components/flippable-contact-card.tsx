@@ -93,7 +93,7 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
                       onClick={handleGetInTouchClick}
                       className="bg-card hover:bg-card/90 text-card-foreground transition-transform hover:scale-105 shadow-xl py-3 px-8 text-lg"
                     >
-                      Get In Touch <ArrowRight className="ml-2 h-5 w-5" />
+                      Get In Touch! <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </>
                 )}

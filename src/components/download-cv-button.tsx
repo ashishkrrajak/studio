@@ -8,7 +8,7 @@ import { Download } from 'lucide-react';
 export function DownloadCVButton() {
   const handleDownloadCV = () => {
     // Ensure you have 'ashish-kumar-rajak-cv.pdf' in your /public folder.
-    window.open('/ashish-kumar-rajak-cv.pdf', '_blank');
+    window.open('https://drive.google.com/file/d/1KkZoit4YGKMCYx4zYurEYMnjgoS0HPlt', '_blank');
   };
 
   return (
