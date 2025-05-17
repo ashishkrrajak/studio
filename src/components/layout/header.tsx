@@ -1,31 +1,33 @@
 // src/components/layout/header.tsx
 import Link from 'next/link';
-import { Briefcase, User, Mail, Terminal } from 'lucide-react';
+import { Briefcase, User, Mail } from 'lucide-react'; // Terminal icon removed
 
 export function Header() {
   return (
-    <header className="bg-background/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-border/50">
+    <header className="bg-background/80 backdrop-blur-md sticky top-0 z-50 py-3">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center text-3xl font-bold text-primary hover:text-primary/80 transition-colors">
-            <Terminal className="mr-3 h-8 w-8" />
+        <div className="flex items-center justify-between h-14">
+          <Link href="/" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors tracking-tight">
             Alex Johnson
           </Link>
-          <nav className="hidden md:flex space-x-2 items-center">
-            <Link href="/#projects" className="flex items-center text-foreground hover:text-primary transition-colors px-4 py-2 rounded-md text-sm font-medium">
-              <Briefcase className="mr-2 h-4 w-4" />
+          <nav className="hidden md:flex space-x-6 items-center">
+            <Link href="/#projects" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
               Projects
             </Link>
-            <Link href="/about" className="flex items-center text-foreground hover:text-primary transition-colors px-4 py-2 rounded-md text-sm font-medium">
-              <User className="mr-2 h-4 w-4" />
+            <Link href="/about" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
               About
             </Link>
-            <Link href="/contact" className="flex items-center text-foreground hover:text-primary transition-colors px-4 py-2 rounded-md text-sm font-medium bg-primary/10 hover:bg-primary/20">
-              <Mail className="mr-2 h-4 w-4" />
+            <Link href="/contact" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
               Contact
             </Link>
           </nav>
-          {/* TODO: Add mobile navigation (e.g., hamburger menu) */}
+          {/* Mobile navigation can be added here later */}
+          <div className="md:hidden">
+            {/* Placeholder for mobile menu icon */}
+            <button className="text-foreground/80 hover:text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+          </div>
         </div>
       </div>
     </header>
