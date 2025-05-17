@@ -62,7 +62,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
   }
 
   return (
-    <Card className="w-full h-full flex flex-col shadow-xl bg-card border-border overflow-hidden">
+    <Card className="w-full h-full flex flex-col shadow-xl bg-card border-border">
       <CardHeader className="text-center p-4 md:p-6">
         <CardTitle className="text-3xl md:text-4xl font-bold text-primary">Let's Connect</CardTitle>
         <CardDescription className="text-md md:text-lg text-muted-foreground pt-1 md:pt-2">
