@@ -4,13 +4,19 @@ import type React from 'react';
 interface BlobImageProps {
   imageUrl: string;
   className?: string;
-  alt?: string; // Added alt for accessibility, though it won't render directly in the SVG image tag
+  alt?: string;
 }
 
 const BlobImage: React.FC<BlobImageProps> = ({ imageUrl, className, alt = "Profile image" }) => {
+  // The unique ID for the clipPath must match the one used in `clip-path` CSS property.
+  // Using a fixed ID like "blobClipPath" is fine as long as this component isn't rendered
+  // multiple times on the same page where IDs might conflict.
+  // For unique IDs if needed: const clipId = React.useId();
+  const clipPathId = "blob";
+
   return (
     <svg
-      id="blob-svg-container" // Changed ID to be more specific
+      id="10015.io" // Using the ID from the provided SVG
       viewBox="0 0 480 480"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink" // React uses camelCase for namespaced attributes
@@ -19,11 +25,9 @@ const BlobImage: React.FC<BlobImageProps> = ({ imageUrl, className, alt = "Profi
       role="img"
     >
       <defs>
-        <clipPath id="blob-clippath"> {/* Changed ID to be more specific */}
-          <path
-            fill="#474bff" // This fill is for the path itself, usually not visible when used as a clipPath
-            d="M466.5,275Q455,310,444,345Q433,380,404.5,404Q376,428,343.5,443.5Q311,459,275.5,459Q240,459,206,454.5Q172,450,138.5,437.5Q105,425,79,400.5Q53,376,37,343.5Q21,311,11,275.5Q1,240,14.5,205.5Q28,171,44,140Q60,109,86,86.5Q112,64,142.5,48.5Q173,33,206.5,25Q240,17,275,21.5Q310,26,341,42Q372,58,397,83Q422,108,444.5,137Q467,166,472.5,203Q478,240,466.5,275Z"
-          />
+        <clipPath id={clipPathId}>
+          {/* New path data from your provided SVG */}
+          <path fill="#474bff" d="M460.5,273.5Q446,307,431.5,338Q417,369,397,399Q377,429,344,443.5Q311,458,275.5,465.5Q240,473,206,461.5Q172,450,137,439.5Q102,429,77.5,402.5Q53,376,40,342.5Q27,309,18,274.5Q9,240,16,205Q23,170,40,138.5Q57,107,81.5,81.5Q106,56,136,34.5Q166,13,203,9Q240,5,276,11.5Q312,18,340,41.5Q368,65,398.5,83.5Q429,102,445,135Q461,168,468,204Q475,240,460.5,273.5Z" />
         </clipPath>
       </defs>
       <image
@@ -31,7 +35,7 @@ const BlobImage: React.FC<BlobImageProps> = ({ imageUrl, className, alt = "Profi
         y="0"
         width="100%"
         height="100%"
-        clipPath="url(#blob-clippath)" // Use the specific ID
+        clipPath={`url(#${clipPathId})`} // Referencing the clipPath by its ID
         href={imageUrl} // For SVG <image>, 'href' or 'xlinkHref' can be used. React prefers 'href'.
         preserveAspectRatio="xMidYMid slice"
       />

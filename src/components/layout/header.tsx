@@ -20,9 +20,6 @@ export function Header() {
             <Link href="/#journey" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
               Journey
             </Link>
-            <Link href="/#contact" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
-              Connect
-            </Link>
           </nav>
           <div className="md:hidden">
             {/* Placeholder for mobile menu icon */}

@@ -45,7 +45,7 @@ export function HeroSection() {
             <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse md:block hidden"></div>
             
             <BlobImage
-              imageUrl="https://placehold.co/480x480.png" // Replace with "/images/profile.jpg" once your image is in public/images/
+              imageUrl="/images/profile_v1.png" // Replace with "/images/profile.jpg" once your image is in public/images/
               alt="Ashish Kumar Rajak - Java Full Stack Developer"
               className="relative z-10 w-64 h-64 md:w-80 md:h-80 transform transition-transform duration-500 group-hover:scale-105"
               // data-ai-hint is not applicable here as BlobImage is not a next/image component
