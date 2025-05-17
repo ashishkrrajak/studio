@@ -9,17 +9,17 @@ import { Card } from '@/components/ui/card';
 import { MessageCircle, ArrowRight, CheckCircle, Mail, Linkedin, Phone } from 'lucide-react';
 
 interface FlippableContactCardProps {
-  id?: string; 
+  id?: string;
 }
 
 export function FlippableContactCard({ id }: FlippableContactCardProps) {
   const [isFlipped, setIsFlipped] = React.useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = React.useState(false);
   const contactFormRef = React.useRef<ContactFormHandle>(null);
-  
+
   const handleGetInTouchClick = () => {
     setIsFlipped(true);
-    setShowSuccessMessage(false); 
+    setShowSuccessMessage(false);
   };
 
   const handleFormSuccess = () => {
@@ -27,40 +27,38 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
     setShowSuccessMessage(true);
     setTimeout(() => {
       setShowSuccessMessage(false);
-    }, 6000); 
+    }, 6000);
   };
-  
+
   React.useEffect(() => {
-    const currentCardRef = document.getElementById(id || ''); 
-    if (!currentCardRef) return;
+    const currentCardElement = document.getElementById(id || '');
+    if (!currentCardElement) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting && isFlipped) {
+          // Check if form is dirty before flipping back
           if (contactFormRef.current && !contactFormRef.current.isFormDirty()) {
             setIsFlipped(false);
           }
         }
       },
-      { threshold: 0.1 } 
+      { threshold: 0.1 } // Adjust threshold as needed
     );
 
-    if (currentCardRef) {
-        observer.observe(currentCardRef);
-    }
+    observer.observe(currentCardElement);
 
     return () => {
-      if (currentCardRef) {
-        observer.unobserve(currentCardRef);
-      }
+      observer.unobserve(currentCardElement);
     };
   }, [isFlipped, id]);
 
 
   return (
-    <section id={id} className="py-16 md:py-24"> 
+    <section id={id} className="py-16 md:py-24">
       <div className="container mx-auto px-4 text-center">
-        <div className="flip-card-outer w-full max-w-2xl mx-auto">
+        {/* This div now uses 'contact-flip-card-outer' to match CSS for height and perspective */}
+        <div className="contact-flip-card-outer w-full max-w-2xl mx-auto">
           <div className={`flip-card-inner ${isFlipped ? 'is-flipped' : ''}`}>
             {/* Front of the card */}
             <div className="flip-card-front">
@@ -75,7 +73,7 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
                      <Button
                       size="lg"
                       variant="secondary"
-                      onClick={() => setShowSuccessMessage(false)} 
+                      onClick={() => setShowSuccessMessage(false)}
                       className="bg-card hover:bg-card/90 text-card-foreground transition-transform hover:scale-105 shadow-xl py-3 px-8 text-lg mt-4"
                     >
                       Got it!
