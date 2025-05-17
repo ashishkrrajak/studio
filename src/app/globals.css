@@ -107,17 +107,17 @@ html {
   }
 }
 
-/* Basic fade-in animation for sections */
+/* Updated fade-in animation for sections */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateX(-50px); /* Start from the left */
   animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeIn {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0); /* End at original position */
   }
 }
 
