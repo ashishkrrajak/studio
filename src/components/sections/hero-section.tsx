@@ -43,7 +43,7 @@ export function HeroSection() {
           <div className="relative w-full max-w-md mx-auto md:max-w-lg h-80 md:h-[500px] group">
             <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse"></div>
             <Image
-              src="https://media.licdn.com/dms/image/v2/D5603AQFxHa3mkGbdoA/profile-displayphoto-shrink_800_800/B56ZbAgDMLGoAc-/0/1746986349854?e=1752710400&v=beta&t=1VUduthIAAn1mmSbd1D8ytpeq4PYWOLql0BYHO9y3iY" 
+              src="/images/profile.jpg" // Updated to use local image
               alt="Ashish Kumar Rajak - Java Full Stack Developer"
               width={800}
               height={800}
