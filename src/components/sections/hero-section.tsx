@@ -1,3 +1,4 @@
+
 // src/components/sections/hero-section.tsx
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,7 +14,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="md:pr-8 text-center md:text-left">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6"> {/* Reduced font size */}
               <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-pink-500 to-purple-600 leading-tight">
                 JAVA FULL STACK
               </span>

@@ -5,6 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Zap, Puzzle, Code } from 'lucide-react';
 
 export function AboutIntroSection() {
+  const coreStrengths = [
+    { icon: Zap, title: "Scalability", text: "Building systems that grow with demand." },
+    { icon: Puzzle, title: "Problem Solving", text: "Elegant solutions for complex challenges." },
+    { icon: Code, title: "Clean Code", text: "Focusing on maintainable and efficient code." },
+  ];
+
   return (
     <section id="about-intro" className="fade-in-section">
       <div className="container mx-auto px-4">
@@ -28,11 +34,11 @@ export function AboutIntroSection() {
             </div>
             <div className="md:w-1/3 relative min-h-[300px] md:min-h-0">
               <Image
-                src="https://placehold.co/800x1200.png"
-                alt="Ashish Kumar Rajak working at a desk with Java code"
+                src="https://img.freepik.com/free-photo/computer-program-coding-screen_53876-138060.jpg?t=st=1747492111~exp=1747495711~hmac=4f82d45da9d03f492a3cf5b54c84d36afe3310ca197c83a1736463ceca42eb5b&w=2000"
+                alt="Coding screen workspace"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
-                data-ai-hint="workspace developer java"
+                data-ai-hint="coding screen"
               />
                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent md:bg-gradient-to-r md:from-card md:via-card/50 md:to-transparent"></div>
             </div>
@@ -40,11 +46,7 @@ export function AboutIntroSection() {
         </Card>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 text-center">
-          {[
-            { icon: Zap, title: "Scalability", text: "Building systems that grow with demand." },
-            { icon: Puzzle, title: "Problem Solving", text: "Elegant solutions for complex challenges." },
-            { icon: Code, title: "Clean Code", text: "Focusing on maintainable and efficient code." },
-          ].map((item, idx) => (
+          {coreStrengths.map((item, idx) => (
             <div key={item.title} className="flex flex-col items-center p-6 bg-card rounded-lg shadow-lg border border-border/70 hover:shadow-xl transition-shadow fade-in-section" style={{animationDelay: `${0.2 * (idx + 1)}s`}}>
               <item.icon className="h-12 w-12 text-accent mb-4" />
               <h3 className="font-semibold text-xl text-primary mb-2">{item.title}</h3>
