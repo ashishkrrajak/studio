@@ -1,4 +1,3 @@
-
 // src/components/flippable-contact-card.tsx
 'use client';
 
@@ -15,7 +14,6 @@ interface FlippableContactCardProps {
 export function FlippableContactCard({ id }: FlippableContactCardProps) {
   const [isFlipped, setIsFlipped] = React.useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = React.useState(false);
-  const cardRef = React.useRef<HTMLDivElement>(null);
   const contactFormRef = React.useRef<ContactFormHandle>(null);
 
   const handleGetInTouchClick = () => {
@@ -31,33 +29,8 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
     }, 6000); 
   };
 
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // If card is flipped (form is showing) AND it's not intersecting (scrolled out of view)
-        if (isFlipped && !entry.isIntersecting) {
-          // Check if form is dirty
-          if (contactFormRef.current && !contactFormRef.current.isFormDirty()) {
-            setIsFlipped(false); // Flip back only if form is not dirty
-          }
-        }
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible/invisible
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, [isFlipped]); // Re-run effect if isFlipped changes
-
   return (
-    <section id={id} ref={cardRef} className="py-16 md:py-24">
+    <section id={id} className="py-16 md:py-24 fade-in-section"> {/* Added fade-in-section */}
       <div className="container mx-auto px-4 text-center">
         <div className="flip-card-outer w-full max-w-2xl mx-auto">
           <div className={`flip-card-inner ${isFlipped ? 'is-flipped' : ''}`}>
