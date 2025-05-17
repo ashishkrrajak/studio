@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { FlippableContactCard } from '@/components/flippable-contact-card';
 import { DownloadCVButton } from '@/components/download-cv-button';
+import type { JourneyPoint, Testimonial, CodingProfile } from '@/types';
 
 export default function HomePage() {
   const javaCodeSnippets = [
@@ -22,7 +23,7 @@ export default function HomePage() {
 
   const skills = ['Java', 'Spring Boot', 'Microservices', 'React', 'Angular', 'SQL', 'NoSQL (MongoDB)', 'Docker', 'Kubernetes', 'AWS/Cloud', 'JavaScript/TypeScript', 'HTML5', 'CSS3', 'Git & GitHub', 'Agile Methodologies', 'REST APIs', 'CI/CD'];
   
-  const journeyPoints = [
+  const journeyPoints: JourneyPoint[] = [
     {
       icon: TrendingUp,
       title: "Igniting the Spark",
@@ -45,7 +46,7 @@ export default function HomePage() {
     }
   ];
 
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       quote: "Ashish is a phenomenal Java Full Stack Developer. His problem-solving skills and deep understanding of the Spring ecosystem were invaluable to our project's success. A true team player!",
       name: "Emily Carter",
@@ -69,7 +70,7 @@ export default function HomePage() {
     }
   ];
 
-  const codingProfiles = [
+  const codingProfiles: CodingProfile[] = [
     {
       name: "LeetCode",
       url: "https://leetcode.com/ashishkumarrajak_java_dev/", 
@@ -85,7 +86,7 @@ export default function HomePage() {
     {
       name: "GitHub",
       url: "https://github.com/ashishkumarrajak", 
-      icon: Briefcase,
+      icon: Briefcase, // Changed from Code to Briefcase for GitHub to match reference if it was like that
       username: "ashishkumarrajak_java"
     }
   ];
@@ -190,8 +191,8 @@ export default function HomePage() {
                 { icon: Zap, title: "Scalability", text: "Building systems that grow with demand." },
                 { icon: Puzzle, title: "Problem Solving", text: "Elegant solutions for complex challenges." },
                 { icon: Code, title: "Clean Code", text: "Focusing on maintainable and efficient code." },
-              ].map(item => (
-                <div key={item.title} className="flex flex-col items-center p-6 bg-card rounded-lg shadow-lg border border-border/70 hover:shadow-xl transition-shadow fade-in-section" style={{animationDelay: `${0.2 * (Object.keys(item).indexOf(item.title) + 1)}s`}}>
+              ].map((item, idx) => (
+                <div key={item.title} className="flex flex-col items-center p-6 bg-card rounded-lg shadow-lg border border-border/70 hover:shadow-xl transition-shadow fade-in-section" style={{animationDelay: `${0.2 * (idx + 1)}s`}}>
                   <item.icon className="h-12 w-12 text-accent mb-4" />
                   <h3 className="font-semibold text-xl text-primary mb-2">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.text}</p>
@@ -292,10 +293,8 @@ export default function HomePage() {
         </section>
       </div> {/* End of #about wrapper div */}
 
-      {/* Contact Section using Flippable Card - Removed fade-in-section here for testing */}
+      {/* Contact Section using Flippable Card - Ensure no fade-in-section is applied here */}
       <FlippableContactCard id="contact" />
     </div>
   );
 }
-
-    
