@@ -160,9 +160,6 @@ html {
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
-  display: flex; 
-  flex-direction: column;
-  justify-content: center;
   border-radius: var(--radius); /* Match card rounding */
   overflow: hidden; /* Prevents content spill during flip */
 }
