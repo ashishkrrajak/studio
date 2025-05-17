@@ -1,4 +1,3 @@
-
 // src/types/index.ts
 import type React from 'react';
 
@@ -26,4 +25,12 @@ export interface CodingProfile {
 export interface SkillItem {
   name: string;
   icon: React.ElementType;
+}
+
+export interface HeroCodeSnippet {
+  text: string;
+  top: string;
+  left: string;
+  opacity: string;
+  animationDelay: string;
 }

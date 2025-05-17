@@ -1,26 +1,6 @@
-
 // src/components/sections/educational-journey-section.tsx
 import { Card } from '@/components/ui/card';
-import type { JourneyPoint } from '@/types';
-import { School, Zap, Cpu } from 'lucide-react';
-
-const educationalJourneyPoints: JourneyPoint[] = [
-  {
-    icon: School,
-    title: "Master of Science in Computer Science",
-    text: "XYZ University - Specialized in Distributed Systems and Advanced Algorithms. Thesis on 'Performance Optimization in Microservice Architectures'."
-  },
-  {
-    icon: Zap, // Using Zap as a generic "spark" or achievement icon
-    title: "Bachelor of Engineering in Information Technology",
-    text: "ABC College of Engineering - Graduated with First Class Honours. Active member of the coding club and participated in national-level hackathons."
-  },
-  {
-    icon: Cpu,
-    title: "Certifications & Continuous Learning",
-    text: "AWS Certified Developer, Oracle Certified Professional Java Programmer. Continuously learning through online courses on platforms like Coursera and Udemy, focusing on new technologies in cloud computing and big data."
-  }
-];
+import { educationalJourneyPoints } from '@/data/journey-data';
 
 export function EducationalJourneySection() {
   return (

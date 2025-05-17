@@ -1,31 +1,9 @@
-
 // src/components/sections/coding-profiles-section.tsx
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import type { CodingProfile } from '@/types';
-import { ArrowRight, Code2, TerminalSquare, Github } from 'lucide-react';
-
-const codingProfiles: CodingProfile[] = [
-  {
-    name: "LeetCode",
-    url: "https://leetcode.com/ashishkumarrajak_java_dev/", 
-    icon: Code2,
-    username: "ashish_java_dev"
-  },
-  {
-    name: "HackerRank",
-    url: "https://www.hackerrank.com/profile/ashishkumarrajak_java_dev", 
-    icon: TerminalSquare,
-    username: "ashish_codes_java"
-  },
-  {
-    name: "GitHub",
-    url: "https://github.com/ashishkumarrajak", 
-    icon: Github,
-    username: "ashishkumarrajak"
-  }
-];
+import { ArrowRight } from 'lucide-react';
+import { codingProfiles } from '@/data/coding-profiles-data';
 
 export function CodingProfilesSection() {
   return (

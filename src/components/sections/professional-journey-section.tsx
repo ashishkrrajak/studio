@@ -1,26 +1,6 @@
-
 // src/components/sections/professional-journey-section.tsx
 import { Card } from '@/components/ui/card';
-import type { JourneyPoint } from '@/types';
-import { Building, Code, Briefcase } from 'lucide-react';
-
-const professionalJourneyPoints: JourneyPoint[] = [
-  {
-    icon: Building,
-    title: "Senior Java Developer at Tech Solutions Inc.",
-    text: "Led development of scalable microservices using Spring Boot and Kafka. Mentored junior developers and championed best practices in Agile environment. Successfully delivered three major product features ahead of schedule."
-  },
-  {
-    icon: Code,
-    title: "Full Stack Developer at Innovate Apps Ltd.",
-    text: "Developed and maintained full-stack applications using Java, Spring, Angular, and React. Contributed to database design (SQL & NoSQL) and CI/CD pipeline automation. Key player in migrating legacy systems to modern cloud architecture on AWS."
-  },
-   {
-    icon: Briefcase,
-    title: "Software Engineer at Future Systems Co.",
-    text: "Started as a junior engineer, quickly progressing by contributing to various Java-based enterprise projects. Gained foundational experience in backend development, API design, and software testing methodologies."
-  }
-];
+import { professionalJourneyPoints } from '@/data/journey-data';
 
 export function ProfessionalJourneySection() {
   return (
