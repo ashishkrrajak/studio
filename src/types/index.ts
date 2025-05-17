@@ -1,6 +1,5 @@
 // src/types/index.ts
-// Project type removed as project showcase is no longer part of the portfolio.
-// If you add other specific types later, they can go here.
+import type React from 'react';
 
 export interface Testimonial {
   quote: string;
@@ -17,12 +16,16 @@ export interface JourneyPoint {
 }
 
 export interface CodingProfile {
-  name: string;
+  name:string;
   url: string;
   icon: React.ElementType;
   username: string;
 }
 
-export interface SkillBadge {
-  name: string;
-}
+// SkillBadge type removed as skills are now a simple string array in page.tsx
+// export interface SkillBadge {
+//   name: string;
+// }
+
+// Project type removed as project showcase is no longer part of the portfolio.
+// If you add other specific types later, they can go here.

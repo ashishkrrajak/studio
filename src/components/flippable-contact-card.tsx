@@ -24,7 +24,13 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
   const handleFormSuccess = () => {
     setIsFlipped(false);
     setShowSuccessMessage(true);
-    setTimeout(() => setShowSuccessMessage(false), 6000); // Hide success message after 6 seconds
+    // Auto-hide success message can be managed here or by another user interaction
+    setTimeout(() => {
+      // Only hide if it's still showing the success message (user might have clicked "Got it!")
+      if (showSuccessMessage) {
+         setShowSuccessMessage(false);
+      }
+    }, 6000); 
   };
 
   useEffect(() => {
@@ -34,7 +40,8 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         // If the card is flipped (form is visible) and it's less than 10% visible (mostly out of view)
-        if (!entry.isIntersecting && isFlipped && entry.intersectionRatio < 0.1) {
+        // and not currently showing the success message (to prevent flipping back while success is shown)
+        if (!entry.isIntersecting && isFlipped && entry.intersectionRatio < 0.1 && !showSuccessMessage) {
           setIsFlipped(false);
         }
       },
@@ -46,9 +53,9 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
       if (currentCardRef) {
         observer.unobserve(currentCardRef);
       }
-      observer.disconnect();
+      // observer.disconnect(); // Disconnecting here might be too aggressive if other effects use it
     }
-  }, [isFlipped]);
+  }, [isFlipped, showSuccessMessage]);
 
 
   return (
@@ -69,7 +76,7 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
                      <Button
                       size="lg"
                       variant="secondary"
-                      onClick={() => setShowSuccessMessage(false)} // Option to close success message manually
+                      onClick={() => setShowSuccessMessage(false)} 
                       className="bg-card hover:bg-card/90 text-card-foreground transition-transform hover:scale-105 shadow-xl py-3 px-8 text-lg mt-4"
                     >
                       Got it!

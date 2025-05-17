@@ -216,3 +216,19 @@ html {
 .flip-card-front > .flex.flex-col {
   min-height: 100%;
 }
+
+/* General animation for code snippets */
+@keyframes animateFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: animateFadeIn 0.5s ease-out forwards;
+}

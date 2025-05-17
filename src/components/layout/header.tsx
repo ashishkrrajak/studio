@@ -13,13 +13,15 @@ export function Header() {
             <Link href="/#about" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
               About
             </Link>
+            <Link href="/#skills" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
+              Skills
+            </Link>
+            <Link href="/#journey" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
+              Journey
+            </Link>
             <Link href="/#contact" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
               Contact
             </Link>
-            {/* You can add a Blog link later if needed */}
-            {/* <Link href="/#blog" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
-              Blog
-            </Link> */}
           </nav>
           <div className="md:hidden">
             {/* Placeholder for mobile menu icon */}

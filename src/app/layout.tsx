@@ -13,8 +13,8 @@ const geistSans = Geist({
 
 
 export const metadata: Metadata = {
-  title: 'Alex Johnson | Frontend Developer Portfolio',
-  description: 'Showcase of Alex Johnson\'s projects and skills, an AI-enhanced portfolio platform.',
+  title: 'Alex Johnson | Java Full Stack Developer Portfolio',
+  description: 'Showcase of Alex Johnson\'s projects and skills as a Java Full Stack Developer.',
 };
 
 export default function RootLayout({
