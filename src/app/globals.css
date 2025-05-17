@@ -162,12 +162,17 @@ html {
 .contact-flip-card-outer { /* Renamed for specificity */
   perspective: 1000px;
   height: 520px; 
+  max-width: 42rem; /* Equivalent to max-w-2xl */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .testimonial-flip-card-outer {
   perspective: 1000px;
   height: 420px; /* Adjusted height for testimonials */
-  /* max-width and margin auto removed, grid will handle this */
+  max-width: 30rem; /* max-w-lg, can be adjusted */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -220,3 +225,4 @@ html {
 .animate-fadeInHeroSnippet {
   animation: animateFadeInHeroSnippet 0.5s ease-out forwards;
 }
+
