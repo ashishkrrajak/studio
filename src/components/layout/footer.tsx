@@ -1,28 +1,31 @@
 // src/components/layout/footer.tsx
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-card text-card-foreground py-8 mt-auto shadow-t-sm">
+    <footer className="bg-card text-card-foreground py-10 mt-auto border-t border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="flex justify-center space-x-6 mb-4">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors">
-            <Github className="h-6 w-6" />
+        <div className="flex justify-center space-x-8 mb-6">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110">
+            <Github className="h-7 w-7" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
-            <Linkedin className="h-6 w-6" />
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110">
+            <Linkedin className="h-7 w-7" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors">
-            <Twitter className="h-6 w-6" />
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110">
+            <Twitter className="h-7 w-7" />
+          </a>
+           <a href="mailto:alex.johnson.dev@example.com" aria-label="Email" className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110">
+            <Mail className="h-7 w-7" />
           </a>
         </div>
         <p className="text-sm text-muted-foreground">
-          &copy; {currentYear} FolioForge. All rights reserved.
+          &copy; {currentYear} Alex Johnson. All rights reserved.
         </p>
-        <p className="text-xs text-muted-foreground mt-1">
-          Built with Next.js and Tailwind CSS.
+        <p className="text-xs text-muted-foreground mt-2">
+          Crafted with <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="hover:text-primary underline">Next.js</a> and <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary underline">Tailwind CSS</a>. Inspired by modern design.
         </p>
       </div>
     </footer>

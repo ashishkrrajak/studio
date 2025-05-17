@@ -55,68 +55,70 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-16 fade-in-section">
-      <Card className="max-w-2xl mx-auto shadow-xl">
-        <CardHeader className="text-center">
-          <CardTitle className="text-4xl font-bold text-primary">Get In Touch</CardTitle>
-          <CardDescription className="text-lg text-muted-foreground pt-2">
-            Have a project in mind or just want to say hi? Fill out the form below.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-md">Full Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Your Name" {...field} className="text-base py-6 focus:ring-primary focus:border-primary" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-md">Email Address</FormLabel>
-                    <FormControl>
-                      <Input type="email" placeholder="your.email@example.com" {...field} className="text-base py-6 focus:ring-primary focus:border-primary"/>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-md">Message</FormLabel>
-                    <FormControl>
-                      <Textarea placeholder="Your message..." {...field} rows={6} className="text-base focus:ring-primary focus:border-primary"/>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" disabled={isPending} size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground transition-transform hover:scale-105 py-6 text-lg">
-                {isPending ? (
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                ) : (
-                  <Send className="mr-2 h-5 w-5" />
-                )}
-                Send Message
-              </Button>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
+    <section id="contact" className="py-16 md:py-24 fade-in-section">
+      <div className="container mx-auto px-4">
+        <Card className="max-w-2xl mx-auto shadow-xl bg-card border-border">
+          <CardHeader className="text-center p-8">
+            <CardTitle className="text-4xl md:text-5xl font-bold text-primary">Let's Connect</CardTitle>
+            <CardDescription className="text-lg text-muted-foreground pt-3">
+              Have a project idea, a question, or just want to say hello? Drop me a line!
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="p-8">
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-md text-foreground/80">Full Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Your Name" {...field} className="text-base py-6 bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-md text-foreground/80">Email Address</FormLabel>
+                      <FormControl>
+                        <Input type="email" placeholder="your.email@example.com" {...field} className="text-base py-6 bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70"/>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-md text-foreground/80">Message</FormLabel>
+                      <FormControl>
+                        <Textarea placeholder="Your message..." {...field} rows={6} className="text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70"/>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" disabled={isPending} size="lg" className="w-full bg-primary hover:bg-primary/80 text-primary-foreground transition-transform hover:scale-105 py-6 text-lg shadow-lg">
+                  {isPending ? (
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  ) : (
+                    <Send className="mr-2 h-5 w-5" />
+                  )}
+                  Send Message
+                </Button>
+              </form>
+            </Form>
+          </CardContent>
+        </Card>
+      </div>
     </section>
   );
 }

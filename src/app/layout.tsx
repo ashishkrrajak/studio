@@ -13,8 +13,8 @@ const geistSans = Geist({
 
 
 export const metadata: Metadata = {
-  title: 'FolioForge | Your Professional Portfolio',
-  description: 'Showcase your projects and skills with FolioForge, an AI-enhanced portfolio platform.',
+  title: 'Alex Johnson | Frontend Developer Portfolio',
+  description: 'Showcase of Alex Johnson\'s projects and skills, an AI-enhanced portfolio platform.',
 };
 
 export default function RootLayout({
@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geistSans.variable}>
-      <body className="font-sans antialiased flex flex-col min-h-screen">
+    <html lang="en" className={`${geistSans.variable} dark`}> {/* Added dark class */}
+      <body className="font-sans antialiased flex flex-col min-h-screen bg-background text-foreground">
         <Header />
         <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {children}
