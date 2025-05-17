@@ -1,5 +1,6 @@
+
 import type { Metadata } from 'next';
-import { Geist } from 'next/font/google'; // Using Geist Sans as the primary sans-serif font
+import { Geist } from 'next/font/google'; 
 import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -8,13 +9,12 @@ import { Toaster } from "@/components/ui/toaster";
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
-  weight: ['400', '500', '700'] // Include weights for normal, medium, bold
+  weight: ['400', '500', '700'] 
 });
 
-
 export const metadata: Metadata = {
-  title: 'Alex Johnson | Java Full Stack Developer Portfolio',
-  description: 'Showcase of Alex Johnson\'s projects and skills as a Java Full Stack Developer.',
+  title: 'Ashish Kumar Rajak | Java Full Stack Developer Portfolio',
+  description: 'Showcase of Ashish Kumar Rajak\'s projects and skills as a Java Full Stack Developer.',
 };
 
 export default function RootLayout({

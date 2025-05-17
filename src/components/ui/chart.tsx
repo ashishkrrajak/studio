@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -316,7 +317,6 @@ const ChartLegendContent = React.forwardRef<
 )
 ChartLegendContent.displayName = "ChartLegend"
 
-// Helper to extract item config from a payload.
 function getPayloadConfigFromPayload(
   config: ChartConfig,
   payload: unknown,

@@ -1,3 +1,4 @@
+
 // src/components/download-cv-button.tsx
 'use client';
 
@@ -6,11 +7,8 @@ import { Download } from 'lucide-react';
 
 export function DownloadCVButton() {
   const handleDownloadCV = () => {
-    // In a real scenario, you might point to an actual file in the /public directory
-    // or an API route that serves the file.
-    // For this placeholder, we'll use a dummy PDF name.
-    // Ensure you have 'alex-johnson-cv.pdf' in your /public folder.
-    window.open('/alex-johnson-cv.pdf', '_blank');
+    // Ensure you have 'ashish-kumar-rajak-cv.pdf' in your /public folder.
+    window.open('/ashish-kumar-rajak-cv.pdf', '_blank');
   };
 
   return (

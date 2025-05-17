@@ -1,3 +1,4 @@
+
 // src/components/layout/header.tsx
 import Link from 'next/link';
 
@@ -7,10 +8,9 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent hover:opacity-80 transition-opacity tracking-tight">
-            Alex Johnson
+            Ashish Kumar Rajak
           </Link>
           <nav className="hidden md:flex space-x-8 items-center">
-            {/* Updated to link to the #about wrapper div for a more general "About" navigation point */}
             <Link href="/#about" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
               About
             </Link>
@@ -35,5 +35,3 @@ export function Header() {
     </header>
   );
 }
-
-    

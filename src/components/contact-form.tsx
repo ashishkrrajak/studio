@@ -1,3 +1,4 @@
+
 // src/components/contact-form.tsx
 'use client';
 
@@ -62,9 +63,6 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
   }
 
   return (
-    // The section and container will be part of the parent FlippableContactCard
-    // to ensure proper layout within the flip card structure.
-    // The Card component here will be the direct child for styling.
     <Card className="w-full h-full flex flex-col shadow-xl bg-card border-border overflow-hidden">
       <CardHeader className="text-center p-6 md:p-8">
         <CardTitle className="text-3xl md:text-4xl font-bold text-primary">Let's Connect</CardTitle>
@@ -72,7 +70,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
           Have a project idea, a question, or just want to say hello? Drop me a line!
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-6 md:p-8 flex-grow overflow-y-auto"> {/* Added overflow-y-auto */}
+      <CardContent className="p-6 md:p-8 flex-grow overflow-y-auto">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 md:space-y-8">
             <FormField

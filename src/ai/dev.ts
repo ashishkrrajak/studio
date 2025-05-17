@@ -1,6 +1,6 @@
+
 import { config } from 'dotenv';
 config();
 
-// No flows are currently defined or needed for this portfolio version.
-// If AI features like summarization are re-added, their flow imports would go here.
-// e.g., import '@/ai/flows/some-flow.ts';
+// No flows are currently defined for this portfolio.
+// If AI features were to be added, their flow imports would go here.

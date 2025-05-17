@@ -47,21 +47,21 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      quote: "Alex is a phenomenal Java Full Stack Developer. His problem-solving skills and deep understanding of the Spring ecosystem were invaluable to our project's success. A true team player!",
+      quote: "Ashish is a phenomenal Java Full Stack Developer. His problem-solving skills and deep understanding of the Spring ecosystem were invaluable to our project's success. A true team player!",
       name: "Emily Carter",
       title: "Lead Software Architect, Tech Solutions Inc.",
       avatarUrl: "https://placehold.co/100x100.png",
       dataAiHint: "architect person"
     },
     {
-      quote: "Alex's ability to seamlessly bridge backend and frontend development is remarkable. He consistently delivered robust and scalable solutions. Highly recommended!",
+      quote: "Ashish's ability to seamlessly bridge backend and frontend development is remarkable. He consistently delivered robust and scalable solutions. Highly recommended!",
       name: "Michael B. Jordan",
       title: "Engineering Manager, Innovate Solutions",
       avatarUrl: "https://placehold.co/100x100.png",
       dataAiHint: "manager professional"
     },
     {
-      quote: "Working alongside Alex was a masterclass in clean code and efficient design. His dedication to quality and collaborative spirit make him a standout developer.",
+      quote: "Working alongside Ashish was a masterclass in clean code and efficient design. His dedication to quality and collaborative spirit make him a standout developer.",
       name: "Priya Sharma",
       title: "Senior Backend Engineer, CloudNine Ltd.",
       avatarUrl: "https://placehold.co/100x100.png",
@@ -72,21 +72,21 @@ export default function HomePage() {
   const codingProfiles = [
     {
       name: "LeetCode",
-      url: "https://leetcode.com/alexjohnson_java_dev/", // Placeholder
+      url: "https://leetcode.com/ashishkumarrajak_java_dev/", 
       icon: Code2,
-      username: "alex_java_dev"
+      username: "ashish_java_dev"
     },
     {
       name: "HackerRank",
-      url: "https://www.hackerrank.com/profile/alexjohnson_java_dev", // Placeholder
+      url: "https://www.hackerrank.com/profile/ashishkumarrajak_java_dev", 
       icon: TerminalSquare,
-      username: "alex_codes_java"
+      username: "ashish_codes_java"
     },
     {
       name: "GitHub",
-      url: "https://github.com/alexjohnson", // Placeholder
+      url: "https://github.com/ashishkumarrajak", 
       icon: Briefcase,
-      username: "alexjohnson_java"
+      username: "ashishkumarrajak_java"
     }
   ];
 
@@ -107,7 +107,7 @@ export default function HomePage() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-foreground/80 mb-10 leading-relaxed max-w-xl mx-auto md:mx-0">
-                Hi, I'm Alex Johnson - a <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-accent to-teal-400">Java Full Stack Developer</span> with a passion for building robust, scalable, and efficient applications.
+                Hi, I'm Ashish Kumar Rajak - a <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-accent to-teal-400">Java Full Stack Developer</span> with a passion for building robust, scalable, and efficient applications.
               </p>
               <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                 <Button
@@ -129,7 +129,7 @@ export default function HomePage() {
               <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse"></div>
               <Image
                 src="https://placehold.co/600x700.png" 
-                alt="Alex Johnson - Java Full Stack Developer"
+                alt="Ashish Kumar Rajak - Java Full Stack Developer"
                 width={600}
                 height={700}
                 priority
@@ -151,7 +151,7 @@ export default function HomePage() {
       </section>
       
       {/* About Section Parts - Grouped under a div with id="about" for navigation */}
-      <div id="about" className="space-y-20 md:space-y-28 pt-16"> {/* pt-16 for scroll margin */}
+      <div id="about" className="space-y-20 md:space-y-28 pt-16">
         <section id="about-intro" className="fade-in-section">
           <div className="container mx-auto px-4">
             <Card className="overflow-hidden shadow-xl bg-card border-border">
@@ -162,7 +162,7 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent className="p-0">
                     <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
-                      Hello! I'm Alex Johnson, a dedicated Java Full Stack Developer. I specialize in architecting and developing robust, scalable, and high-performance applications, from backend microservices with Spring Boot to dynamic frontends with modern JavaScript frameworks.
+                      Hello! I'm Ashish Kumar Rajak, a dedicated Java Full Stack Developer. I specialize in architecting and developing robust, scalable, and high-performance applications, from backend microservices with Spring Boot to dynamic frontends with modern JavaScript frameworks.
                     </p>
                     <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
                       My passion lies in tackling complex challenges and delivering elegant, efficient solutions. I thrive in collaborative environments, leveraging Agile methodologies to build impactful software. I'm proficient across the full development lifecycle, from concept to deployment and maintenance.
@@ -175,7 +175,7 @@ export default function HomePage() {
                 <div className="md:w-1/3 relative min-h-[300px] md:min-h-0">
                   <Image
                     src="https://placehold.co/800x1200.png"
-                    alt="Alex Johnson working at a desk with Java code"
+                    alt="Ashish Kumar Rajak working at a desk with Java code"
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     data-ai-hint="workspace developer java"
@@ -297,5 +297,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    

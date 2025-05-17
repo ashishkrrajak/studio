@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -164,9 +165,15 @@ html {
   overflow: hidden; /* Prevents content spill during flip */
 }
 
+.flip-card-front {
+  /* Ensure the front card is visible and layered correctly */
+  z-index: 2; /* Higher z-index to be on top initially */
+}
+
 .flip-card-back {
   transform: rotateY(180deg);
   background-color: hsl(var(--card)); /* Ensure back has a solid background */
+  z-index: 1;
 }
 
 /* Adjustments for ContactForm within the flip card */
