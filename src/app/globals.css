@@ -158,10 +158,19 @@ html {
 }
 
 /* Flippable Card Styles */
-.flip-card-outer {
+.contact-flip-card-outer { /* Renamed for specificity */
   perspective: 1000px;
-  height: 520px; /* Adjusted height */
+  height: 520px; 
 }
+
+.testimonial-flip-card-outer {
+  perspective: 1000px;
+  height: 420px; /* Adjusted height for testimonials */
+  max-width: 600px; /* Max width for a single card */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .flip-card-inner {
   position: relative;
@@ -171,7 +180,7 @@ html {
   transform-style: preserve-3d;
 }
 
-.flip-card-outer .flip-card-inner.is-flipped {
+.flip-card-inner.is-flipped {
   transform: rotateY(180deg);
 }
 
@@ -213,11 +222,4 @@ html {
   animation: animateFadeInHeroSnippet 0.5s ease-out forwards;
 }
 
-/* Animation for testimonial cards */
-@keyframes testimonial-fade-in {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.animate-testimonial-fade-in {
-  animation: testimonial-fade-in 0.5s ease-out forwards;
-}
+    

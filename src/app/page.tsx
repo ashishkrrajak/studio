@@ -33,19 +33,26 @@ export default function HomePage() {
             <EducationalJourneySection />
           </AnimateOnScrollWrapper>
         </div>
-
-        <AnimateOnScrollWrapper initialClassName="scroll-fade-trigger">
-          <TestimonialsSection />
-        </AnimateOnScrollWrapper>
-        
-        <AnimateOnScrollWrapper initialClassName="scroll-fade-trigger">
-          <CodingProfilesSection />
-        </AnimateOnScrollWrapper>
       </div> 
 
       <AnimateOnScrollWrapper initialClassName="scroll-fade-trigger">
-        <FlippableContactCard id="contact" />
+        <TestimonialsSection />
       </AnimateOnScrollWrapper>
+      
+      <AnimateOnScrollWrapper initialClassName="scroll-fade-trigger">
+        <CodingProfilesSection />
+      </AnimateOnScrollWrapper>
+
+      {/* Note: FlippableContactCard is already wrapped with AnimateOnScrollWrapper in its own definition in the previous step */}
+      {/* If it was not, it would be:
+      <AnimateOnScrollWrapper initialClassName="scroll-fade-trigger">
+      */}
+      <div className="contact-flip-card-outer"> {/* Ensure this wrapper has a specific class for height if FlippableContactCard's root isn't 'contact-flip-card-outer' */}
+        <FlippableContactCard id="contact" />
+      </div>
+      {/* </AnimateOnScrollWrapper> */}
     </div>
   );
 }
+
+    
