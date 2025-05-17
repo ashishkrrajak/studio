@@ -80,7 +80,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 <FormItem>
                   <FormLabel className="text-md text-foreground/80">Full Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your Name" {...field} className="text-base py-5 md:py-6 bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70" />
+                    <Input placeholder="Your Name" {...field} className="h-12 text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -93,7 +93,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 <FormItem>
                   <FormLabel className="text-md text-foreground/80">Email Address</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="your.email@example.com" {...field} className="text-base py-5 md:py-6 bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70"/>
+                    <Input type="email" placeholder="your.email@example.com" {...field} className="h-12 text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70"/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -112,7 +112,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={isPending} size="lg" className="w-full bg-primary hover:bg-primary/80 text-primary-foreground transition-transform hover:scale-105 py-5 md:py-6 text-lg shadow-lg">
+            <Button type="submit" disabled={isPending} size="lg" className="w-full bg-primary hover:bg-primary/80 text-primary-foreground transition-transform hover:scale-105 h-12 text-lg shadow-lg">
               {isPending ? (
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
               ) : (
