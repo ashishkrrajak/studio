@@ -49,7 +49,7 @@ export function HeroSection() {
               height={700}
               priority
               className="rounded-lg object-cover shadow-2xl relative z-10 transform transition-transform duration-500 group-hover:scale-105"
-              data-ai-hint="profile picture background removal"
+              data-ai-hint="background removal" 
             />
             {javaCodeSnippets.map((snippet, index) => (
               <div
