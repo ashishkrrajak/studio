@@ -40,4 +40,3 @@ export function ProfessionalJourneySection() {
     </section>
   );
 }
-```
