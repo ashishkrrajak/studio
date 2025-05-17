@@ -14,7 +14,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="md:pr-8 text-center md:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6"> {/* Reduced font size */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6">
               <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-pink-500 to-purple-600 leading-tight">
                 JAVA FULL STACK
               </span>
@@ -49,7 +49,7 @@ export function HeroSection() {
               width={800}
               height={800}
               priority
-              className="rounded-lg object-cover shadow-2xl relative z-10 transform transition-transform duration-500 group-hover:scale-105"
+              className="rounded-full object-cover shadow-2xl z-10 transform transition-transform duration-500 group-hover:scale-105 absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-48 md:w-64 md:h-64"
               data-ai-hint="background removal" 
             />
             {javaCodeSnippets.map((snippet, index) => (

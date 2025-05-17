@@ -21,7 +21,7 @@ export function Header() {
               Journey
             </Link>
             <Link href="/#contact" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
-              Let's Connect!
+              Connect
             </Link>
           </nav>
           <div className="md:hidden">
