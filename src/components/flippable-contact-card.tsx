@@ -32,7 +32,7 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
   };
   
   // Effect for flipping card back if form is not dirty and scrolled out of view
-  useEffect(() => {
+  React.useEffect(() => {
     const currentCardRef = cardRef.current;
     if (!currentCardRef) return;
 
@@ -112,4 +112,3 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
     </section>
   );
 }
-```

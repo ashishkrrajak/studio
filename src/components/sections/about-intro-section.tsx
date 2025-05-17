@@ -12,7 +12,6 @@ export function AboutIntroSection() {
   ];
 
   return (
-    // Removed fade-in-section, will be handled by AnimateOnScrollWrapper
     <section id="about-intro">
       <div className="container mx-auto px-4">
         <Card className="overflow-hidden shadow-xl bg-card border-border">
@@ -47,9 +46,8 @@ export function AboutIntroSection() {
         </Card>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 text-center">
-          {coreStrengths.map((item, idx) => (
-            <div key={item.title} className="flex flex-col items-center p-6 bg-card rounded-lg shadow-lg border border-border/70 hover:shadow-xl transition-shadow" > 
-            {/* Removed fade-in-section and style animationDelay here as well, parent wrapper will handle it */}
+          {coreStrengths.map((item) => (
+            <div key={item.title} className="flex flex-col items-center p-6 bg-card rounded-lg shadow-lg border border-border/70 hover:shadow-xl transition-shadow" >
               <item.icon className="h-12 w-12 text-accent mb-4" />
               <h3 className="font-semibold text-xl text-primary mb-2">{item.title}</h3>
               <p className="text-sm text-muted-foreground">{item.text}</p>
@@ -60,4 +58,3 @@ export function AboutIntroSection() {
     </section>
   );
 }
-```
