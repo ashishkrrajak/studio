@@ -1,4 +1,3 @@
-
 // src/components/contact-form.tsx
 'use client';
 
@@ -64,15 +63,15 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
 
   return (
     <Card className="w-full h-full flex flex-col shadow-xl bg-card border-border overflow-hidden">
-      <CardHeader className="text-center p-6 md:p-8">
+      <CardHeader className="text-center p-4 md:p-6">
         <CardTitle className="text-3xl md:text-4xl font-bold text-primary">Let's Connect</CardTitle>
-        <CardDescription className="text-md md:text-lg text-muted-foreground pt-2 md:pt-3">
+        <CardDescription className="text-md md:text-lg text-muted-foreground pt-1 md:pt-2">
           Have a project idea, a question, or just want to say hello? Drop me a line!
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-6 md:p-8 flex-grow overflow-y-auto">
+      <CardContent className="p-4 md:p-6 flex-grow overflow-y-auto">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 md:space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 md:space-y-4">
             <FormField
               control={form.control}
               name="name"
@@ -106,7 +105,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 <FormItem>
                   <FormLabel className="text-md text-foreground/80">Message</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Your message..." {...field} rows={5} className="text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70"/>
+                    <Textarea placeholder="Your message..." {...field} rows={3} className="text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70"/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>

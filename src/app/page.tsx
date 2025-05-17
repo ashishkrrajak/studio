@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Code, Briefcase, Zap, Puzzle, Quote, TerminalSquare, MessageCircle, TrendingUp, Code2, Mail } from 'lucide-react';
+import { ArrowRight, Code, Briefcase, Zap, Puzzle, Quote, TerminalSquare, Code2, Mail } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
@@ -25,7 +25,7 @@ export default function HomePage() {
   
   const journeyPoints: JourneyPoint[] = [
     {
-      icon: TrendingUp,
+      icon: Zap, // Changed from TrendingUp to Zap to match a previous iteration for consistency if needed
       title: "Igniting the Spark",
       text: "My journey into the world of programming began with a fascination for how software solves real-world problems. This curiosity quickly evolved into a passion for Java and its robust ecosystem."
     },
@@ -86,7 +86,7 @@ export default function HomePage() {
     {
       name: "GitHub",
       url: "https://github.com/ashishkumarrajak", 
-      icon: Briefcase, // Changed from Code to Briefcase for GitHub to match reference if it was like that
+      icon: Briefcase, 
       username: "ashishkumarrajak_java"
     }
   ];
@@ -116,12 +116,10 @@ export default function HomePage() {
                   asChild
                   className="group relative inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-primary-foreground transition-all duration-300 ease-in-out overflow-hidden rounded-lg shadow-lg hover:shadow-xl"
                   style={{ background: 'linear-gradient(to right, hsl(var(--accent)), hsl(var(--primary)))' }}
-                >
-                  <Link href="/#contact">
+                ><Link href="/#contact">
                     Contact Me
                     <Mail className="ml-2 h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                </Button>
+                  </Link></Button>
                 <DownloadCVButton />
               </div>
             </div>
@@ -293,8 +291,10 @@ export default function HomePage() {
         </section>
       </div> {/* End of #about wrapper div */}
 
-      {/* Contact Section using Flippable Card - Ensure no fade-in-section is applied here */}
+      {/* Contact Section using Flippable Card - Removed fade-in-section to isolate potential issues */}
       <FlippableContactCard id="contact" />
     </div>
   );
 }
+
+    
