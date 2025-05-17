@@ -167,15 +167,6 @@ html {
   margin-right: auto;
 }
 
-.testimonial-flip-card-outer {
-  perspective: 1000px;
-  height: 420px; /* Adjusted height for testimonials */
-  max-width: 30rem; /* max-w-lg, can be adjusted */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -225,4 +216,3 @@ html {
 .animate-fadeInHeroSnippet {
   animation: animateFadeInHeroSnippet 0.5s ease-out forwards;
 }
-
