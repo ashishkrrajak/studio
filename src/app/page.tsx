@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { FlippableContactCard } from '@/components/flippable-contact-card';
-import { DownloadCVButton } from '@/components/download-cv-button'; // Import the new component
+import { DownloadCVButton } from '@/components/download-cv-button';
 
 export default function HomePage() {
   const javaCodeSnippets = [
@@ -121,7 +121,7 @@ export default function HomePage() {
                     <Mail className="ml-2 h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <DownloadCVButton /> {/* Use the new Client Component here */}
+                <DownloadCVButton />
               </div>
             </div>
             
@@ -134,7 +134,7 @@ export default function HomePage() {
                 height={700}
                 priority
                 className="rounded-lg object-cover shadow-2xl border-2 border-card/50 relative z-10 transform transition-transform duration-500 group-hover:scale-105"
-                data-ai-hint="software developer professional"
+                data-ai-hint="developer professional"
               />
               {javaCodeSnippets.map((snippet, index) => (
                 <div
@@ -150,8 +150,8 @@ export default function HomePage() {
         </div>
       </section>
       
-      {/* About Section Parts */}
-      <div id="about" className="space-y-20 md:space-y-28 pt-16"> {/* Added pt-16 for scroll margin */}
+      {/* About Section Parts - Grouped under a div with id="about" for navigation */}
+      <div id="about" className="space-y-20 md:space-y-28 pt-16"> {/* pt-16 for scroll margin */}
         <section id="about-intro" className="fade-in-section">
           <div className="container mx-auto px-4">
             <Card className="overflow-hidden shadow-xl bg-card border-border">
@@ -290,10 +290,12 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </div>
+      </div> {/* End of #about wrapper div */}
 
       {/* Contact Section using Flippable Card */}
       <FlippableContactCard id="contact" />
     </div>
   );
 }
+
+    

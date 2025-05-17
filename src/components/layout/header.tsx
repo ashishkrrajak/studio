@@ -10,6 +10,7 @@ export function Header() {
             Alex Johnson
           </Link>
           <nav className="hidden md:flex space-x-8 items-center">
+            {/* Updated to link to the #about wrapper div for a more general "About" navigation point */}
             <Link href="/#about" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
               About
             </Link>
@@ -34,3 +35,5 @@ export function Header() {
     </header>
   );
 }
+
+    
