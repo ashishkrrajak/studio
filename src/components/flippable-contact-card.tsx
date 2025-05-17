@@ -1,3 +1,4 @@
+
 // src/components/flippable-contact-card.tsx
 'use client';
 
@@ -8,13 +9,14 @@ import { Card } from '@/components/ui/card';
 import { MessageCircle, ArrowRight, CheckCircle } from 'lucide-react';
 
 interface FlippableContactCardProps {
-  id: string;
+  id?: string; // Made id optional as it's mainly for page anchor
 }
 
 export function FlippableContactCard({ id }: FlippableContactCardProps) {
   const [isFlipped, setIsFlipped] = React.useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = React.useState(false);
   const contactFormRef = React.useRef<ContactFormHandle>(null);
+  const cardRef = React.useRef<HTMLDivElement>(null);
 
   const handleGetInTouchClick = () => {
     setIsFlipped(true);
@@ -28,9 +30,36 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
       setShowSuccessMessage(false);
     }, 6000); 
   };
+  
+  // Effect for flipping card back if form is not dirty and scrolled out of view
+  useEffect(() => {
+    const currentCardRef = cardRef.current;
+    if (!currentCardRef) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && isFlipped) {
+          if (contactFormRef.current && !contactFormRef.current.isFormDirty()) {
+            setIsFlipped(false);
+          }
+        }
+      },
+      { threshold: 0.1 } // Adjust threshold as needed
+    );
+
+    observer.observe(currentCardRef);
+
+    return () => {
+      if (currentCardRef) {
+        observer.unobserve(currentCardRef);
+      }
+    };
+  }, [isFlipped]);
+
 
   return (
-    <section id={id} className="py-16 md:py-24 fade-in-section"> {/* Added fade-in-section */}
+    // Removed fade-in-section, will be handled by AnimateOnScrollWrapper
+    <section id={id} ref={cardRef} className="py-16 md:py-24"> 
       <div className="container mx-auto px-4 text-center">
         <div className="flip-card-outer w-full max-w-2xl mx-auto">
           <div className={`flip-card-inner ${isFlipped ? 'is-flipped' : ''}`}>
@@ -83,3 +112,4 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
     </section>
   );
 }
+```

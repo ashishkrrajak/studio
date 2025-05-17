@@ -1,3 +1,4 @@
+
 // src/components/sections/hero-section.tsx
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -9,6 +10,7 @@ import BlobImage from '../blob-image';
 export function HeroSection() {
   return (
     <section id="home" className="relative min-h-[calc(100vh-5rem-70px)] flex items-center justify-center overflow-hidden fade-in-section py-16 md:py-0">
+      {/* The fade-in-section class here will make the hero animate once on load */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-primary/5 opacity-50"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -44,7 +46,7 @@ export function HeroSection() {
             <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse md:block hidden"></div>
             
             <BlobImage
-              imageUrl="/images/profile_v1.png" 
+              imageUrl="/images/profile.jpg" 
               alt="Ashish Kumar Rajak - Java Full Stack Developer"
               className="relative z-10 w-72 h-72 md:w-96 md:h-96 transform transition-transform duration-500 group-hover:scale-105"
             />
@@ -52,7 +54,7 @@ export function HeroSection() {
             {javaCodeSnippets.map((snippet, index) => (
               <div
                 key={index}
-                className={`absolute font-mono text-xs md:text-sm text-foreground/70 ${snippet.opacity} transform group-hover:scale-110 transition-all duration-500 animate-fadeIn z-0`}
+                className={`absolute font-mono text-xs md:text-sm text-foreground/70 ${snippet.opacity} transform group-hover:scale-110 transition-all duration-500 animate-fadeInHeroSnippet z-0`}
                 style={{ animationDelay: snippet.animationDelay, top: snippet.top, left: snippet.left }}
               >
                 {snippet.text}
@@ -64,3 +66,4 @@ export function HeroSection() {
     </section>
   );
 }
+```

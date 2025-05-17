@@ -1,3 +1,4 @@
+
 // src/components/sections/coding-profiles-section.tsx
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -7,7 +8,8 @@ import { codingProfiles } from '@/data/coding-profiles-data';
 
 export function CodingProfilesSection() {
   return (
-    <section id="coding-profiles" className="py-16 md:py-20 fade-in-section">
+    // Removed fade-in-section, will be handled by AnimateOnScrollWrapper
+    <section id="coding-profiles" className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">Coding & Profile Hub</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -30,3 +32,4 @@ export function CodingProfilesSection() {
     </section>
   );
 }
+```

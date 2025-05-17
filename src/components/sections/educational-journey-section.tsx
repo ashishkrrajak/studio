@@ -1,10 +1,12 @@
+
 // src/components/sections/educational-journey-section.tsx
 import { Card } from '@/components/ui/card';
 import { educationalJourneyPoints } from '@/data/journey-data';
 
 export function EducationalJourneySection() {
   return (
-    <section id="educational-journey" className="fade-in-section">
+    // Removed fade-in-section, will be handled by AnimateOnScrollWrapper
+    <section id="educational-journey">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Educational Journey</h2>
         <div className="relative">
@@ -38,3 +40,4 @@ export function EducationalJourneySection() {
     </section>
   );
 }
+```
