@@ -1,3 +1,4 @@
+
 // src/components/contact-form.tsx
 'use client';
 
@@ -63,15 +64,15 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
 
   return (
     <Card className="w-full h-full flex flex-col shadow-xl bg-card border-border">
-      <CardHeader className="text-center p-4 md:p-6">
+      <CardHeader className="text-center p-6">
         <CardTitle className="text-3xl md:text-4xl font-bold text-primary">Let's Connect</CardTitle>
-        <CardDescription className="text-md md:text-lg text-muted-foreground pt-1 md:pt-2">
+        <CardDescription className="text-md md:text-lg text-muted-foreground pt-2">
           Have a project idea, a question, or just want to say hello? Drop me a line!
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-4 md:p-6 flex-grow overflow-y-auto">
+      <CardContent className="p-6 flex-grow overflow-y-auto">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 md:space-y-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
               control={form.control}
               name="name"
@@ -79,7 +80,11 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 <FormItem>
                   <FormLabel className="text-md text-foreground/80">Full Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your Name" {...field} className="h-12 text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70" />
+                    <Input 
+                      placeholder="Your Name" 
+                      {...field} 
+                      className="h-12 text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70" 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -92,7 +97,12 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 <FormItem>
                   <FormLabel className="text-md text-foreground/80">Email Address</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="your.email@example.com" {...field} className="h-12 text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70"/>
+                    <Input 
+                      type="email" 
+                      placeholder="your.email@example.com" 
+                      {...field} 
+                      className="h-12 text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -105,13 +115,23 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
                 <FormItem>
                   <FormLabel className="text-md text-foreground/80">Message</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Your message..." {...field} rows={3} className="text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70"/>
+                    <Textarea 
+                      placeholder="Your message..." 
+                      {...field} 
+                      rows={4} // Increased rows
+                      className="text-base bg-input border-border/50 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/70"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={isPending} size="lg" className="w-full bg-primary hover:bg-primary/80 text-primary-foreground transition-transform hover:scale-105 h-12 text-lg shadow-lg">
+            <Button 
+              type="submit" 
+              disabled={isPending} 
+              size="lg" 
+              className="w-full bg-primary hover:bg-primary/80 text-primary-foreground transition-transform hover:scale-105 h-12 text-lg shadow-lg"
+            >
               {isPending ? (
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
               ) : (
