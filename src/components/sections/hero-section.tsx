@@ -1,10 +1,10 @@
 // src/components/sections/hero-section.tsx
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { DownloadCVButton } from '@/components/download-cv-button';
 import { Mail } from 'lucide-react';
 import { javaCodeSnippets } from '@/data/hero-data';
+import BlobImage from '../blob-image'; // Import the new BlobImage component
 
 export function HeroSection() {
   return (
@@ -40,21 +40,20 @@ export function HeroSection() {
             </div>
           </div>
           
-          <div className="relative w-full max-w-md mx-auto md:max-w-lg h-80 md:h-[500px] group">
-            <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse"></div>
-            <Image
-              src="https://placehold.co/800x800.png" // Temporarily using placeholder
+          <div className="relative w-full max-w-md mx-auto md:max-w-lg h-80 md:h-[500px] group flex items-center justify-center">
+            <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse md:block hidden"></div>
+            
+            <BlobImage
+              imageUrl="https://placehold.co/480x480.png" // Placeholder or use "/images/profile.jpg"
               alt="Ashish Kumar Rajak - Java Full Stack Developer"
-              width={800}
-              height={800}
-              priority
-              className="rounded-full object-cover shadow-2xl z-10 transform transition-transform duration-500 group-hover:scale-105 absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-48 md:w-64 md:h-64"
-              data-ai-hint="background removal" 
+              className="relative z-10 w-64 h-64 md:w-80 md:h-80 transform transition-transform duration-500 group-hover:scale-105"
             />
+
+            {/* Positioning snippets relative to the main container, not the image directly */}
             {javaCodeSnippets.map((snippet, index) => (
               <div
                 key={index}
-                className={`absolute font-mono text-xs md:text-sm text-foreground/70 ${snippet.opacity} transform group-hover:scale-110 transition-all duration-500 animate-fadeIn`}
+                className={`absolute font-mono text-xs md:text-sm text-foreground/70 ${snippet.opacity} transform group-hover:scale-110 transition-all duration-500 animate-fadeIn z-0`}
                 style={{ animationDelay: snippet.animationDelay, top: snippet.top, left: snippet.left }}
               >
                 {snippet.text}
