@@ -12,27 +12,27 @@ export function Header() {
             Ashish Kumar Rajak
           </Link>
           <nav className="hidden md:flex space-x-4 items-center">
-            <Button 
-              asChild 
-              variant="outline" 
-              size="sm" 
-              className="text-foreground/80 border-border hover:text-primary hover:border-primary hover:bg-background/90 transition-colors"
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="text-foreground/80 border-border hover:border-primary focus-visible:ring-primary transition-colors"
             >
               <Link href="/#about">About</Link>
             </Button>
-            <Button 
-              asChild 
-              variant="outline" 
-              size="sm" 
-              className="text-foreground/80 border-border hover:text-primary hover:border-primary hover:bg-background/90 transition-colors"
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="text-foreground/80 border-border hover:border-primary focus-visible:ring-primary transition-colors"
             >
               <Link href="/#skills">Skills</Link>
             </Button>
-            <Button 
-              asChild 
-              variant="outline" 
-              size="sm" 
-              className="text-foreground/80 border-border hover:text-primary hover:border-primary hover:bg-background/90 transition-colors"
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="text-foreground/80 border-border hover:border-primary focus-visible:ring-primary transition-colors"
             >
               <Link href="/#journey">Journey</Link>
             </Button>
