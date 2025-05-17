@@ -2,8 +2,8 @@
 // src/components/flippable-contact-card.tsx
 'use client';
 
-import { useState } from 'react';
-import { ContactForm } from './contact-form';
+import * as React from 'react';
+import { ContactForm, type ContactFormHandle } from './contact-form';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { MessageCircle, ArrowRight, CheckCircle } from 'lucide-react';
@@ -13,8 +13,10 @@ interface FlippableContactCardProps {
 }
 
 export function FlippableContactCard({ id }: FlippableContactCardProps) {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [isFlipped, setIsFlipped] = React.useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = React.useState(false);
+  const cardRef = React.useRef<HTMLDivElement>(null);
+  const contactFormRef = React.useRef<ContactFormHandle>(null);
 
   const handleGetInTouchClick = () => {
     setIsFlipped(true);
@@ -29,8 +31,33 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
     }, 6000); 
   };
 
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // If card is flipped (form is showing) AND it's not intersecting (scrolled out of view)
+        if (isFlipped && !entry.isIntersecting) {
+          // Check if form is dirty
+          if (contactFormRef.current && !contactFormRef.current.isFormDirty()) {
+            setIsFlipped(false); // Flip back only if form is not dirty
+          }
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible/invisible
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [isFlipped]); // Re-run effect if isFlipped changes
+
   return (
-    <section id={id} className="py-16 md:py-24 fade-in-section">
+    <section id={id} ref={cardRef} className="py-16 md:py-24">
       <div className="container mx-auto px-4 text-center">
         <div className="flip-card-outer w-full max-w-2xl mx-auto">
           <div className={`flip-card-inner ${isFlipped ? 'is-flipped' : ''}`}>
@@ -75,7 +102,7 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
 
             {/* Back of the card */}
             <div className="flip-card-back">
-              <ContactForm onSuccess={handleFormSuccess} />
+              <ContactForm ref={contactFormRef} onSuccess={handleFormSuccess} />
             </div>
           </div>
         </div>

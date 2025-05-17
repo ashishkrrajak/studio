@@ -2,49 +2,125 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Code, Briefcase, Zap, Puzzle, Quote, TerminalSquare, Code2, Mail } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { 
+  ArrowRight, Code, Briefcase, Zap, Puzzle, Quote, TerminalSquare, Code2, Mail,
+  Coffee, Leaf, Atom, Database, Cloud, GitFork, Github, Repeat, Network, FastForward, Cpu, School, Building, Braces, DatabaseZap
+} from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { FlippableContactCard } from '@/components/flippable-contact-card';
 import { DownloadCVButton } from '@/components/download-cv-button';
-import type { JourneyPoint, Testimonial, CodingProfile } from '@/types';
+import type { JourneyPoint, Testimonial, CodingProfile, SkillItem } from '@/types';
+
+// Simple SVG Logo Components (can be moved to a separate file if they grow)
+const AngularLogo = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 mr-2">
+    <path d="M12 2L2 7l2 12h16l2-12L12 2z" />
+    <path d="M12 2v5l6 3" />
+    <path d="M12 2v5l-6 3" />
+    {/* <path d="M12 12h.01" /> Simplified, original had this for center dot */}
+    <path d="M8 17h8" />
+    <path d="M10 12l2 5 2-5" />
+  </svg>
+);
+
+const DockerLogo = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 mr-2">
+    <path d="M21.95 9.93C21.43 6.46 18.52 4 15 4H9c-3.31 0-6 2.69-6 6s2.69 6 6 6h.59c.25 1.49.92 2.83 1.88 3.92.82.93 1.88 1.66 3.04 2 .26.08.53.12.8.12.88 0 1.68-.38 2.27-.99.47-.5.78-1.12.91-1.8.1-.53.02-1.09-.21-1.59-.59-1.26-1.94-2.04-3.44-2.04H13v-2h1.5c2.48 0 4.5-2.02 4.5-4.5 0-.16-.01-.32-.03-.48.17-.01.33-.02.5-.02 1.02 0 1.9.46 2.48 1.19zM10 11H8v-1h2v1zm0 2H8v-1h2v1zm0 2H8v-1h2v1zm2-4h-1v-1h1v1zm0 2h-1v-1h1v1zm0 2h-1v-1h1v1zm2-4h-1v-1h1v1zm0 2h-1v-1h1v1zm0 2h-1v-1h1v1zm3.5-1c-.83 0-1.5-.67-1.5-1.5S14.67 12 15.5 12s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+  </svg>
+);
+
+const KubernetesLogo = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 mr-2">
+    <path d="M12 2l7.75 4.5V11L12 15.5 4.25 11V6.5L12 2z" />
+    <path d="M4.25 11l7.75 4.5 7.75-4.5" />
+    <path d="M12 22V15.5" />
+    <circle cx="12" cy="15.5" r="1.5" fill="currentColor" stroke="none"/>
+    <path d="M4.25 11v6.5L12 22l7.75-4.5V11" />
+  </svg>
+);
+
+const Html5Logo = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 mr-2">
+    <path d="M2 3l1.612 18L12 23.311 20.388 21 22 3H2zm10.449 15.199H8.924l-.471-4.73h3.528v-1.902H7.901l-.358-4.083h8.458l-.338 3.892H11.8v1.91h4.031l-.622 6.71z"/>
+  </svg>
+);
+
+const Css3Logo = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 mr-2">
+     <path d="M2 3l1.612 18L12 23.311 20.388 21 22 3H2zm8.449 15.199H6.923l-.472-4.73h3.529v-1.902H5.901l-.359-4.083h10.458l-.141 1.551H7.731l.179 2.532h6.15l-.42 4.72H8.237l.212 2.33h4.031l-.622 6.71zM17.1 10.272h-4.03V8.369h4.32l.199-2.089H8.93V4.2h8.458l-.288 6.072z"/>
+  </svg>
+);
+
 
 export default function HomePage() {
   const javaCodeSnippets = [
     { text: "public class Main {}", top: "15%", left: "55%", opacity: "opacity-40", animationDelay: "0.1s" },
     { text: "@SpringBootApplication", top: "25%", left: "75%", opacity: "opacity-30", animationDelay: "0.2s" },
     { text: "System.out.println(\"Hello\");", top: "40%", left: "50%", opacity: "opacity-50", animationDelay: "0.3s" },
-    { text: "SELECT * FROM users;", top: "60%", left: "80%", opacity: "opacity-30", animationDelay: "0.4s" },
+    { text: "entityManager.persist(entity);", top: "60%", left: "80%", opacity: "opacity-30", animationDelay: "0.4s" },
     { text: "// Java Full Stack", top: "75%", left: "60%", opacity: "opacity-40", animationDelay: "0.5s" },
-    { text: "Microservices Arch", top: "50%", left: "45%", opacity: "opacity-20", animationDelay: "0.6s" },
-    { text: "docker build -t app .", top: "5%", left: "65%", opacity: "opacity-30", animationDelay: "0.7s" },
+    { text: "new KafkaProducer<>(props);", top: "50%", left: "45%", opacity: "opacity-20", animationDelay: "0.6s" },
+    { text: "Flux.just(\"Reactive\");", top: "5%", left: "65%", opacity: "opacity-30", animationDelay: "0.7s" },
   ];
 
-  const skills = ['Java', 'Spring Boot', 'Microservices', 'React', 'Angular', 'SQL', 'NoSQL (MongoDB)', 'Docker', 'Kubernetes', 'AWS/Cloud', 'JavaScript/TypeScript', 'HTML5', 'CSS3', 'Git & GitHub', 'Agile Methodologies', 'REST APIs', 'CI/CD'];
+  const skills: SkillItem[] = [
+    { name: 'Java', icon: Coffee },
+    { name: 'Spring Boot', icon: Leaf },
+    { name: 'Microservices', icon: Puzzle },
+    { name: 'React', icon: Atom },
+    { name: 'Angular', icon: AngularLogo },
+    { name: 'SQL', icon: Database },
+    { name: 'NoSQL (MongoDB)', icon: DatabaseZap },
+    { name: 'Docker', icon: DockerLogo },
+    { name: 'Kubernetes', icon: KubernetesLogo },
+    { name: 'AWS/Cloud', icon: Cloud },
+    { name: 'JavaScript/TypeScript', icon: Braces },
+    { name: 'HTML5', icon: Html5Logo },
+    { name: 'CSS3', icon: Css3Logo },
+    { name: 'Git & GitHub', icon: Github },
+    { name: 'Agile Methodologies', icon: Repeat },
+    { name: 'REST APIs', icon: Network },
+    { name: 'CI/CD', icon: FastForward },
+  ];
   
-  const journeyPoints: JourneyPoint[] = [
+  const professionalJourneyPoints: JourneyPoint[] = [
     {
-      icon: Zap, // Changed from TrendingUp to Zap to match a previous iteration for consistency if needed
-      title: "Igniting the Spark",
-      text: "My journey into the world of programming began with a fascination for how software solves real-world problems. This curiosity quickly evolved into a passion for Java and its robust ecosystem."
+      icon: Building,
+      title: "Senior Java Developer at Tech Solutions Inc.",
+      text: "Led development of scalable microservices using Spring Boot and Kafka. Mentored junior developers and championed best practices in Agile environment. Successfully delivered three major product features ahead of schedule."
     },
     {
       icon: Code,
-      title: "Building a Strong Foundation",
-      text: "Through dedicated learning and a Computer Science degree, I mastered core Java concepts, data structures, and algorithms. I then expanded my expertise into full-stack development, embracing frameworks like Spring Boot for backend and React/Angular for frontend."
-    },
-    {
-      icon: Briefcase,
-      title: "Professional Milestones",
-      text: "With over 5+ years in the industry, I've contributed to diverse projects, from enterprise-level applications to scalable microservices. Each experience has honed my ability to architect and deliver high-quality, maintainable code."
+      title: "Full Stack Developer at Innovate Apps Ltd.",
+      text: "Developed and maintained full-stack applications using Java, Spring, Angular, and React. Contributed to database design (SQL & NoSQL) and CI/CD pipeline automation. Key player in migrating legacy systems to modern cloud architecture on AWS."
     },
      {
-      icon: Zap,
-      title: "Embracing Modern Technologies",
-      text: "I continuously explore emerging technologies, including cloud platforms like AWS, containerization with Docker & Kubernetes, and modern DevOps practices, ensuring my solutions are always cutting-edge and efficient."
+      icon: Briefcase,
+      title: "Software Engineer at Future Systems Co.",
+      text: "Started as a junior engineer, quickly progressing by contributing to various Java-based enterprise projects. Gained foundational experience in backend development, API design, and software testing methodologies."
     }
   ];
+
+  const educationalJourneyPoints: JourneyPoint[] = [
+    {
+      icon: School,
+      title: "Master of Science in Computer Science",
+      text: "XYZ University - Specialized in Distributed Systems and Advanced Algorithms. Thesis on 'Performance Optimization in Microservice Architectures'."
+    },
+    {
+      icon: Zap, // Using Zap as a generic "spark" or achievement icon
+      title: "Bachelor of Engineering in Information Technology",
+      text: "ABC College of Engineering - Graduated with First Class Honours. Active member of the coding club and participated in national-level hackathons."
+    },
+    {
+      icon: Cpu,
+      title: "Certifications & Continuous Learning",
+      text: "AWS Certified Developer, Oracle Certified Professional Java Programmer. Continuously learning through online courses on platforms like Coursera and Udemy, focusing on new technologies in cloud computing and big data."
+    }
+  ];
+
 
   const testimonials: Testimonial[] = [
     {
@@ -86,8 +162,8 @@ export default function HomePage() {
     {
       name: "GitHub",
       url: "https://github.com/ashishkumarrajak", 
-      icon: Briefcase, 
-      username: "ashishkumarrajak_java"
+      icon: Github, // Changed from Briefcase to Github icon for consistency
+      username: "ashishkumarrajak"
     }
   ];
 
@@ -149,7 +225,6 @@ export default function HomePage() {
         </div>
       </section>
       
-      {/* About Section Parts - Grouped under a div with id="about" for navigation */}
       <div id="about" className="space-y-20 md:space-y-28 pt-16">
         <section id="about-intro" className="fade-in-section">
           <div className="container mx-auto px-4">
@@ -205,8 +280,13 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">My Core Skills</h2>
             <div className="flex flex-wrap justify-center gap-4">
               {skills.map((skill) => (
-                <Badge key={skill} variant="secondary" className="text-md px-6 py-3 bg-secondary/80 text-secondary-foreground hover:bg-secondary transition-colors cursor-default shadow-md">
-                  {skill}
+                <Badge 
+                  key={skill.name} 
+                  variant="secondary" 
+                  className="text-md px-4 py-3 bg-secondary/80 text-secondary-foreground hover:bg-secondary transition-all duration-200 ease-in-out hover:scale-110 cursor-default shadow-md flex items-center space-x-2"
+                >
+                  <skill.icon />
+                  <span>{skill.name}</span>
                 </Badge>
               ))}
             </div>
@@ -215,33 +295,66 @@ export default function HomePage() {
         
         <section id="journey" className="py-16 md:py-20 fade-in-section">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">My Journey</h2>
-            <div className="relative">
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-border/50 -translate-x-1/2 hidden md:block"></div>
-              {journeyPoints.map((point, index) => (
-                <div key={index} className={`mb-12 flex md:items-center w-full ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                  <div className="hidden md:flex md:w-5/12"></div>
-                  <div className="hidden md:flex justify-center md:w-2/12">
-                    <div className="relative">
-                      <div className="absolute w-8 h-8 bg-primary rounded-full z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-4 border-card shadow-lg flex items-center justify-center">
-                        <point.icon className="h-4 w-4 text-primary-foreground" />
+            <div className="mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Professional Journey</h2>
+              <div className="relative">
+                <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-border/50 -translate-x-1/2 hidden md:block"></div>
+                {professionalJourneyPoints.map((point, index) => (
+                  <div key={index} className={`mb-12 flex md:items-center w-full ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                    <div className="hidden md:flex md:w-5/12"></div>
+                    <div className="hidden md:flex justify-center md:w-2/12">
+                      <div className="relative">
+                        <div className="absolute w-8 h-8 bg-primary rounded-full z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-4 border-card shadow-lg flex items-center justify-center">
+                          <point.icon className="h-4 w-4 text-primary-foreground" />
+                        </div>
                       </div>
                     </div>
+                    <div className="w-full md:w-5/12">
+                      <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow border-border/70 p-6 rounded-lg">
+                        <div className="flex items-center md:hidden mb-4">
+                           <div className="w-8 h-8 bg-primary rounded-full z-10 border-4 border-card shadow-lg flex items-center justify-center mr-4">
+                             <point.icon className="h-4 w-4 text-primary-foreground" />
+                           </div>
+                           <h3 className="text-xl font-semibold text-accent">{point.title}</h3>
+                        </div>
+                         <h3 className="hidden md:block text-xl font-semibold text-accent mb-3">{point.title}</h3>
+                        <p className="text-md text-foreground/80 leading-relaxed">{point.text}</p>
+                      </Card>
+                    </div>
                   </div>
-                  <div className="w-full md:w-5/12">
-                    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow border-border/70 p-6 rounded-lg">
-                      <div className="flex items-center md:hidden mb-4">
-                         <div className="w-8 h-8 bg-primary rounded-full z-10 border-4 border-card shadow-lg flex items-center justify-center mr-4">
-                           <point.icon className="h-4 w-4 text-primary-foreground" />
-                         </div>
-                         <h3 className="text-xl font-semibold text-accent">{point.title}</h3>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Educational Journey</h2>
+              <div className="relative">
+                <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-border/50 -translate-x-1/2 hidden md:block"></div>
+                {educationalJourneyPoints.map((point, index) => (
+                  <div key={index} className={`mb-12 flex md:items-center w-full ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                    <div className="hidden md:flex md:w-5/12"></div>
+                    <div className="hidden md:flex justify-center md:w-2/12">
+                      <div className="relative">
+                        <div className="absolute w-8 h-8 bg-primary rounded-full z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-4 border-card shadow-lg flex items-center justify-center">
+                          <point.icon className="h-4 w-4 text-primary-foreground" />
+                        </div>
                       </div>
-                       <h3 className="hidden md:block text-xl font-semibold text-accent mb-3">{point.title}</h3>
-                      <p className="text-md text-foreground/80 leading-relaxed">{point.text}</p>
-                    </Card>
+                    </div>
+                    <div className="w-full md:w-5/12">
+                      <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow border-border/70 p-6 rounded-lg">
+                         <div className="flex items-center md:hidden mb-4">
+                           <div className="w-8 h-8 bg-primary rounded-full z-10 border-4 border-card shadow-lg flex items-center justify-center mr-4">
+                             <point.icon className="h-4 w-4 text-primary-foreground" />
+                           </div>
+                           <h3 className="text-xl font-semibold text-accent">{point.title}</h3>
+                        </div>
+                         <h3 className="hidden md:block text-xl font-semibold text-accent mb-3">{point.title}</h3>
+                        <p className="text-md text-foreground/80 leading-relaxed">{point.text}</p>
+                      </Card>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -289,12 +402,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </div> {/* End of #about wrapper div */}
+      </div> 
 
-      {/* Contact Section using Flippable Card - Removed fade-in-section to isolate potential issues */}
       <FlippableContactCard id="contact" />
     </div>
   );
 }
-
-    

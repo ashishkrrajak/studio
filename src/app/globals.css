@@ -139,7 +139,7 @@ html {
 /* Flippable Card Styles */
 .flip-card-outer {
   perspective: 1000px;
-  height: 580px; /* Increased height */
+  height: 520px; /* Adjusted height */
 }
 
 .flip-card-inner {
@@ -191,3 +191,4 @@ html {
 .animate-fadeIn {
   animation: animateFadeIn 0.5s ease-out forwards;
 }
+

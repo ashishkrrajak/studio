@@ -2,6 +2,7 @@
 // src/components/contact-form.tsx
 'use client';
 
+import * as React from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
@@ -25,7 +26,11 @@ interface ContactFormProps {
   onSuccess?: () => void;
 }
 
-export function ContactForm({ onSuccess }: ContactFormProps) {
+export interface ContactFormHandle {
+  isFormDirty: () => boolean;
+}
+
+export const ContactForm = React.forwardRef<ContactFormHandle, ContactFormProps>(({ onSuccess }, ref) => {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
 
@@ -37,6 +42,10 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
       message: '',
     },
   });
+
+  React.useImperativeHandle(ref, () => ({
+    isFormDirty: () => form.formState.isDirty,
+  }));
 
   async function onSubmit(values: ContactFormValues) {
     startTransition(async () => {
@@ -74,7 +83,6 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  {/* <FormLabel className="text-md text-foreground/80">Name</FormLabel> */}
                   <FormControl>
                     <Input 
                       placeholder="Your Name" 
@@ -91,7 +99,6 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  {/* <FormLabel className="text-md text-foreground/80">Email</FormLabel> */}
                   <FormControl>
                     <Input 
                       type="email" 
@@ -109,7 +116,6 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  {/* <FormLabel className="text-md text-foreground/80">Message</FormLabel> */}
                   <FormControl>
                     <Textarea 
                       placeholder="Your message..." 
@@ -141,4 +147,6 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
       </CardContent>
     </Card>
   );
-}
+});
+
+ContactForm.displayName = 'ContactForm';
