@@ -10,7 +10,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
@@ -65,17 +64,17 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
   return (
     <Card className="w-full h-full flex flex-col border-0 shadow-none bg-card">
       <CardHeader className="text-center p-6">
-        <CardTitle className="text-3xl md:text-4xl font-bold text-primary">CONTACT FORM</CardTitle>
+        <CardTitle className="text-3xl md:text-4xl font-bold text-primary">Let's Connect</CardTitle>
       </CardHeader>
       <CardContent className="p-6 flex-grow overflow-y-auto">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-md text-foreground/80">Name</FormLabel>
+                  {/* <FormLabel className="text-md text-foreground/80">Name</FormLabel> */}
                   <FormControl>
                     <Input 
                       placeholder="Your Name" 
@@ -92,7 +91,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-md text-foreground/80">Email</FormLabel>
+                  {/* <FormLabel className="text-md text-foreground/80">Email</FormLabel> */}
                   <FormControl>
                     <Input 
                       type="email" 
@@ -110,7 +109,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-md text-foreground/80">Message</FormLabel>
+                  {/* <FormLabel className="text-md text-foreground/80">Message</FormLabel> */}
                   <FormControl>
                     <Textarea 
                       placeholder="Your message..." 
