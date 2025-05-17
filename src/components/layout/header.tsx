@@ -1,6 +1,7 @@
 
 // src/components/layout/header.tsx
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export function Header() {
   return (
@@ -10,16 +11,16 @@ export function Header() {
           <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent hover:opacity-80 transition-opacity tracking-tight">
             Ashish Kumar Rajak
           </Link>
-          <nav className="hidden md:flex space-x-8 items-center">
-            <Link href="/#about" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
-              About
-            </Link>
-            <Link href="/#skills" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
-              Skills
-            </Link>
-            <Link href="/#journey" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
-              Journey
-            </Link>
+          <nav className="hidden md:flex space-x-4 items-center">
+            <Button asChild variant="outline" size="sm" className="text-foreground/80 hover:text-primary hover:border-primary">
+              <Link href="/#about">About</Link>
+            </Button>
+            <Button asChild variant="outline" size="sm" className="text-foreground/80 hover:text-primary hover:border-primary">
+              <Link href="/#skills">Skills</Link>
+            </Button>
+            <Button asChild variant="outline" size="sm" className="text-foreground/80 hover:text-primary hover:border-primary">
+              <Link href="/#journey">Journey</Link>
+            </Button>
           </nav>
           <div className="md:hidden">
             {/* Placeholder for mobile menu icon */}

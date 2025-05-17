@@ -6,18 +6,17 @@ import * as React from 'react';
 import { ContactForm, type ContactFormHandle } from './contact-form';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { MessageCircle, ArrowRight, CheckCircle } from 'lucide-react';
+import { MessageCircle, ArrowRight, CheckCircle, Mail, Linkedin } from 'lucide-react';
 
 interface FlippableContactCardProps {
-  id?: string; // Made id optional as it's mainly for page anchor
+  id?: string; 
 }
 
 export function FlippableContactCard({ id }: FlippableContactCardProps) {
   const [isFlipped, setIsFlipped] = React.useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = React.useState(false);
   const contactFormRef = React.useRef<ContactFormHandle>(null);
-  const cardRef = React.useRef<HTMLDivElement>(null);
-
+  
   const handleGetInTouchClick = () => {
     setIsFlipped(true);
     setShowSuccessMessage(false); 
@@ -31,9 +30,8 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
     }, 6000); 
   };
   
-  // Effect for flipping card back if form is not dirty and scrolled out of view
   React.useEffect(() => {
-    const currentCardRef = cardRef.current;
+    const currentCardRef = document.getElementById(id || ''); // Using id to get the element
     if (!currentCardRef) return;
 
     const observer = new IntersectionObserver(
@@ -44,7 +42,7 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
           }
         }
       },
-      { threshold: 0.1 } // Adjust threshold as needed
+      { threshold: 0.1 } 
     );
 
     observer.observe(currentCardRef);
@@ -54,12 +52,11 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
         observer.unobserve(currentCardRef);
       }
     };
-  }, [isFlipped]);
+  }, [isFlipped, id]);
 
 
   return (
-    // Removed fade-in-section, will be handled by AnimateOnScrollWrapper
-    <section id={id} ref={cardRef} className="py-16 md:py-24"> 
+    <section id={id} className="py-16 md:py-24"> 
       <div className="container mx-auto px-4 text-center">
         <div className="flip-card-outer w-full max-w-2xl mx-auto">
           <div className={`flip-card-inner ${isFlipped ? 'is-flipped' : ''}`}>
@@ -85,10 +82,18 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
                 ) : (
                   <>
                     <MessageCircle className="w-16 h-16 text-primary-foreground mx-auto mb-6" />
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">Interested in Collaborating?</h2>
-                    <p className="text-lg text-primary-foreground/90 mb-10 leading-relaxed">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Interested in Collaborating?</h2>
+                    <p className="text-lg text-primary-foreground/90 mb-6 leading-relaxed">
                       I'm always excited to discuss new projects, innovative ideas, or potential opportunities. Let's connect and build something amazing together!
                     </p>
+                    <div className="my-6 flex flex-col items-center space-y-3 text-primary-foreground/90">
+                      <a href="mailto:ashish.kumarrajak765@gmail.com" className="flex items-center text-sm hover:underline">
+                        <Mail className="mr-2 h-4 w-4" /> ashish.kumarrajak765@gmail.com
+                      </a>
+                      <a href="https://linkedin.com/in/ashishkrrajak" target="_blank" rel="noopener noreferrer" className="flex items-center text-sm hover:underline">
+                        <Linkedin className="mr-2 h-4 w-4" /> Connect on LinkedIn
+                      </a>
+                    </div>
                     <Button
                       size="lg"
                       variant="secondary"
