@@ -1,31 +1,9 @@
 // src/app/actions.ts
 'use server';
 
-import { summarizeProject, type SummarizeProjectInput, type SummarizeProjectOutput } from '@/ai/flows/summarize-project';
 import { z } from 'zod';
 import { contactFormSchema, type ContactFormValues } from '@/lib/schemas';
 
-
-export async function handleGenerateSummary(
-  projectData: Pick<SummarizeProjectInput, 'description' | 'technologies'>
-): Promise<{ summary?: string; error?: string }> {
-  try {
-    // The AI flow expects technologies as a comma-separated string
-    const input: SummarizeProjectInput = {
-      description: projectData.description,
-      technologies: Array.isArray(projectData.technologies) ? projectData.technologies.join(', ') : projectData.technologies,
-    };
-    const result: SummarizeProjectOutput = await summarizeProject(input);
-    return { summary: result.summary };
-  } catch (error) {
-    console.error('Error generating project summary:', error);
-    let errorMessage = 'Failed to generate summary.';
-    if (error instanceof Error) {
-      errorMessage = error.message;
-    }
-    return { error: errorMessage };
-  }
-}
 
 export async function handleContactFormSubmit(
   values: ContactFormValues

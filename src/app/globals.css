@@ -4,6 +4,12 @@
 
 body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  /* Add padding-top to prevent content from being hidden by sticky header */
+  padding-top: 70px; /* Adjust based on actual header height */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer base {
@@ -48,25 +54,25 @@ body {
 
   .dark {
     /* Dark Theme (Inspired by the Behance reference) */
-    --background: 224 71% 4%; /* Very Dark Desaturated Blue */
+    --background: 230 20% 6%; /* Even darker blue/black */
     --foreground: 210 40% 96%; /* Light Gray for text */
     --card: 224 50% 9%; /* Darker card background */
     --card-foreground: 210 40% 94%;
     --popover: 224 71% 3%; /* Even darker for popovers */
     --popover-foreground: 210 40% 96%;
-    --primary: 320 80% 60%; /* Vibrant Magenta/Pink */
+    --primary: 300 80% 60%; /* Vibrant Purple (was Magenta/Pink) */
     --primary-foreground: 0 0% 100%; /* White */
     --secondary: 224 40% 15%; /* Muted Dark Blue */
     --secondary-foreground: 210 40% 90%;
     --muted: 224 30% 12%;
     --muted-foreground: 210 25% 70%; /* Lighter muted text */
-    --accent: 190 85% 60%; /* Vibrant Cyan/Blue */
+    --accent: 200 85% 60%; /* Vibrant Indigo/Blue (was Cyan) */
     --accent-foreground: 224 71% 4%; /* Dark for text on accent buttons */
     --destructive: 0 63% 50%;
     --destructive-foreground: 0 0% 98%;
     --border: 224 30% 20%; /* Softer borders */
     --input: 224 30% 18%; /* Dark input background */
-    --ring: 190 85% 55%; /* Cyan for rings */
+    --ring: 200 85% 55%; /* Indigo for rings */
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -76,12 +82,12 @@ body {
     /* Sidebar vars for dark theme */
     --sidebar-background: 224 60% 7%; /* Slightly lighter than page bg */
     --sidebar-foreground: 210 40% 85%;
-    --sidebar-primary: 320 80% 60%;
+    --sidebar-primary: 300 80% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 190 85% 60%;
+    --sidebar-accent: 200 85% 60%;
     --sidebar-accent-foreground: 224 71% 4%;
     --sidebar-border: 224 30% 15%;
-    --sidebar-ring: 190 85% 55%;
+    --sidebar-ring: 200 85% 55%;
   }
 }
 
@@ -127,4 +133,86 @@ body {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* Flippable Card Styles */
+.flip-card-outer {
+  perspective: 1000px;
+  min-height: 480px; /* Adjusted to better fit form */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition */
+  transform-style: preserve-3d;
+}
+
+.flip-card-outer .flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  border-radius: var(--radius); /* Match card rounding */
+  overflow: hidden; /* Prevents content spill during flip */
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: hsl(var(--card)); /* Ensure back has a solid background */
+}
+
+/* Adjustments for ContactForm within the flip card */
+.flip-card-back .h-full { /* Ensure the contact form's parent takes full height */
+  height: 100%;
+}
+.flip-card-back .max-w-2xl {
+  margin: 0 auto; 
+  width: 100%; 
+  height: 100%; 
+}
+.flip-card-back section#contact { 
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 100%;
+  display: flex; /* Allow card to grow */
+  flex-direction: column;
+}
+.flip-card-back section#contact > .container {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+  height: 100%;
+  display: flex; /* Allow card to grow */
+  flex-direction: column;
+}
+.flip-card-back section#contact .mx-auto.shadow-xl { /* Target the card within contact form */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: none !important; /* Remove shadow from inner card if it's on backface */
+  border: none !important; /* Remove border from inner card */
+}
+.flip-card-back section#contact .p-8 { /* Target CardContent and CardHeader */
+  flex-grow: 1;
+}
+
+.flip-card-back form {
+  overflow-y: auto; /* Allow form content to scroll if it overflows */
+  max-height: calc(100% - 6rem); /* Adjust based on header/footer of form card */
+}
+
+/* Specific styles for the front card content to ensure it fills height */
+.flip-card-front > .flex.flex-col {
+  min-height: 100%;
 }

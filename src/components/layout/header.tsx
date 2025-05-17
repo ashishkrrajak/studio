@@ -1,27 +1,26 @@
 // src/components/layout/header.tsx
 import Link from 'next/link';
-import { Briefcase, User, Mail } from 'lucide-react'; // Terminal icon removed
 
 export function Header() {
   return (
-    <header className="bg-background/80 backdrop-blur-md sticky top-0 z-50 py-3">
+    <header className="bg-background/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 py-3 border-b border-border/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
-          <Link href="/" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors tracking-tight">
+          <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent hover:opacity-80 transition-opacity tracking-tight">
             Alex Johnson
           </Link>
-          <nav className="hidden md:flex space-x-6 items-center">
-            <Link href="/#projects" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
-              Projects
-            </Link>
-            <Link href="/about" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
+          <nav className="hidden md:flex space-x-8 items-center">
+            <Link href="/#about" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
               About
             </Link>
-            <Link href="/contact" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
+            <Link href="/#contact" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
               Contact
             </Link>
+            {/* You can add a Blog link later if needed */}
+            {/* <Link href="/#blog" className="text-md font-medium text-foreground/80 hover:text-primary transition-colors">
+              Blog
+            </Link> */}
           </nav>
-          {/* Mobile navigation can be added here later */}
           <div className="md:hidden">
             {/* Placeholder for mobile menu icon */}
             <button className="text-foreground/80 hover:text-primary">

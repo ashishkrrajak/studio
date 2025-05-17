@@ -1,4 +1,5 @@
 import { config } from 'dotenv';
 config();
 
-import '@/ai/flows/summarize-project.ts';
+// Removed summarize-project import as it's deleted
+// import '@/ai/flows/summarize-project.ts';
