@@ -12,9 +12,9 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote: "Ashish's ability to seamlessly bridge backend and frontend development is remarkable. He consistently delivered robust and scalable solutions. Highly recommended!",
-    name: "Michael B. Jordan", // Intentionally using a known name for variety, can be changed
+    name: "Michael B. Chen", // Changed from Jordan for variety
     title: "Engineering Manager, Innovate Solutions",
-    avatarUrl: "https://placehold.co/100x100.png?text=MB",
+    avatarUrl: "https://placehold.co/100x100.png?text=MC",
     dataAiHint: "manager professional"
   },
   {
@@ -33,9 +33,23 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote: "A dedicated and highly skilled developer. Ashish was instrumental in optimizing our application's performance and scalability. Pleasure to work with!",
-    name: "Sophia Chen",
+    name: "Sophia Williams", // Changed from Chen for variety
     title: "DevOps Lead, NextGen Systems",
-    avatarUrl: "https://placehold.co/100x100.png?text=SC",
+    avatarUrl: "https://placehold.co/100x100.png?text=SW",
     dataAiHint: "tech professional"
+  },
+  {
+    quote: "Ashish's technical acumen in Java and Spring Boot is top-notch. He's also a great communicator, making complex ideas easy to understand.",
+    name: "James Rodriguez",
+    title: "Tech Lead, Quantum Leap AI",
+    avatarUrl: "https://placehold.co/100x100.png?text=JR",
+    dataAiHint: "developer male"
+  },
+  {
+    quote: "I was consistently impressed by Ashish's proactive approach and his ability to deliver features that exceeded expectations. A valuable asset to any team.",
+    name: "Olivia Garcia",
+    title: "Project Manager, AlphaSoft",
+    avatarUrl: "https://placehold.co/100x100.png?text=OG",
+    dataAiHint: "manager woman"
   }
 ];

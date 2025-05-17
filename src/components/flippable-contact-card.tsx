@@ -6,7 +6,7 @@ import * as React from 'react';
 import { ContactForm, type ContactFormHandle } from './contact-form';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { MessageCircle, ArrowRight, CheckCircle, Mail, Linkedin } from 'lucide-react';
+import { MessageCircle, ArrowRight, CheckCircle, Mail, Linkedin, Phone } from 'lucide-react';
 
 interface FlippableContactCardProps {
   id?: string; 
@@ -31,7 +31,7 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
   };
   
   React.useEffect(() => {
-    const currentCardRef = document.getElementById(id || ''); // Using id to get the element
+    const currentCardRef = document.getElementById(id || ''); 
     if (!currentCardRef) return;
 
     const observer = new IntersectionObserver(
@@ -45,7 +45,9 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
       { threshold: 0.1 } 
     );
 
-    observer.observe(currentCardRef);
+    if (currentCardRef) {
+        observer.observe(currentCardRef);
+    }
 
     return () => {
       if (currentCardRef) {
@@ -89,6 +91,9 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
                     <div className="my-6 flex flex-col items-center space-y-3 text-primary-foreground/90">
                       <a href="mailto:ashish.kumarrajak765@gmail.com" className="flex items-center text-sm hover:underline">
                         <Mail className="mr-2 h-4 w-4" /> ashish.kumarrajak765@gmail.com
+                      </a>
+                       <a href="tel:+919876543210" className="flex items-center text-sm hover:underline"> {/* Replace with actual phone number */}
+                        <Phone className="mr-2 h-4 w-4" /> +91 98765 43210 {/* Replace with actual phone number */}
                       </a>
                       <a href="https://linkedin.com/in/ashishkrrajak" target="_blank" rel="noopener noreferrer" className="flex items-center text-sm hover:underline">
                         <Linkedin className="mr-2 h-4 w-4" /> Connect on LinkedIn
