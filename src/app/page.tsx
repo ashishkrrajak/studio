@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Code, Briefcase, Zap, Puzzle, UsersRound, Quote, TerminalSquare, MessageCircle, TrendingUp, Code2, Download, Mail } from 'lucide-react';
+import { ArrowRight, Code, Briefcase, Zap, Puzzle, Quote, TerminalSquare, MessageCircle, TrendingUp, Code2, Download, Mail } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
@@ -183,9 +183,8 @@ export default function HomePage() {
                   <Image
                     src="https://placehold.co/800x1200.png"
                     alt="Alex Johnson working at a desk with Java code"
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-transform duration-500 hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                     data-ai-hint="workspace developer java"
                   />
                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent md:bg-gradient-to-r md:from-card md:via-card/50 md:to-transparent"></div>
