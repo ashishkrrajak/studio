@@ -212,11 +212,6 @@ html {
   max-height: calc(100% - 6rem); /* Adjust based on header/footer of form card */
 }
 
-/* Specific styles for the front card content to ensure it fills height */
-.flip-card-front > .flex.flex-col {
-  min-height: 100%;
-}
-
 /* General animation for code snippets */
 @keyframes animateFadeIn {
   from {
