@@ -87,6 +87,7 @@ export const ContactForm = React.forwardRef<ContactFormHandle, ContactFormProps>
                     <Input 
                       placeholder="Your Name" 
                       {...field} 
+                      autoComplete="off"
                       className="h-12 text-base bg-transparent border-0 border-b-2 border-border/40 rounded-none focus:ring-0 focus:border-primary placeholder:text-muted-foreground/70 py-3 px-1" 
                     />
                   </FormControl>
@@ -104,6 +105,7 @@ export const ContactForm = React.forwardRef<ContactFormHandle, ContactFormProps>
                       type="email" 
                       placeholder="your.email@example.com" 
                       {...field} 
+                      autoComplete="off"
                       className="h-12 text-base bg-transparent border-0 border-b-2 border-border/40 rounded-none focus:ring-0 focus:border-primary placeholder:text-muted-foreground/70 py-3 px-1"
                     />
                   </FormControl>
@@ -121,6 +123,7 @@ export const ContactForm = React.forwardRef<ContactFormHandle, ContactFormProps>
                       placeholder="Your message..." 
                       {...field} 
                       rows={4} 
+                      autoComplete="off"
                       className="text-base bg-transparent border-0 border-b-2 border-border/40 rounded-none focus:ring-0 focus:border-primary placeholder:text-muted-foreground/70 py-3 px-1 min-h-[100px]"
                     />
                   </FormControl>
