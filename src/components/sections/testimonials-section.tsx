@@ -27,25 +27,23 @@ export function TestimonialsSection() {
 
     const cycleId = setInterval(() => {
       // --- Flip Card 1 ---
-      if (testimonials.length > 0) { // Ensure card 1 can flip if at least one testimonial
+      if (testimonials.length > 0) {
         setIsFlipped1(true); // Start flipping card 1
         setTimeout(() => {
           setDataPointer1(prev => (prev + (testimonials.length === 1 ? 1 : 2)) % testimonials.length);
           setIsFlipped1(false); // Flip card 1 back to show new front
 
           // --- Flip Card 2 (staggered) ---
-          // Only proceed with Card 2 if there are at least two testimonials
-          // and if card 2 isn't meant to show the same as card 1 (already handled by initial state)
           if (testimonials.length > 1) {
             setTimeout(() => {
               setIsFlipped2(true); // Start flipping card 2
               setTimeout(() => {
                 setDataPointer2(prev => (prev + 2) % testimonials.length);
                 setIsFlipped2(false); // Flip card 2 back
-              }, FLIP_ANIMATION_DURATION / 2);
+              }, FLIP_ANIMATION_DURATION); // Changed: Wait for full flip
             }, STAGGER_CARD2_DELAY);
           }
-        }, FLIP_ANIMATION_DURATION / 2);
+        }, FLIP_ANIMATION_DURATION); // Changed: Wait for full flip
       }
     }, FLIP_CYCLE_INTERVAL);
 
