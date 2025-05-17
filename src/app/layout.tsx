@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} dark`}> {/* Added dark class */}
+    <html lang="en" className={`${geistSans.variable} dark`}>
       <body className="font-sans antialiased flex flex-col min-h-screen bg-background text-foreground">
         <Header />
         <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
