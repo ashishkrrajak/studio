@@ -43,7 +43,7 @@ export function HeroSection() {
           <div className="relative w-full max-w-md mx-auto md:max-w-lg h-80 md:h-[500px] group">
             <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse"></div>
             <Image
-              src="/images/profile.jpg" // Updated to use local image
+              src="https://placehold.co/800x800.png" 
               alt="Ashish Kumar Rajak - Java Full Stack Developer"
               width={800}
               height={800}
