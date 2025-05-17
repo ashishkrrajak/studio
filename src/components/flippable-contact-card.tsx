@@ -1,10 +1,10 @@
 // src/components/flippable-contact-card.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ContactForm } from './contact-form';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card'; // Card is used for the front face directly
+import { Card } from '@/components/ui/card';
 import { MessageCircle, ArrowRight, CheckCircle } from 'lucide-react';
 
 interface FlippableContactCardProps {
@@ -14,7 +14,6 @@ interface FlippableContactCardProps {
 export function FlippableContactCard({ id }: FlippableContactCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  // const cardRef = useRef<HTMLDivElement>(null); // Removed: cardRef is no longer needed
 
   const handleGetInTouchClick = () => {
     setIsFlipped(true);
@@ -24,43 +23,14 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
   const handleFormSuccess = () => {
     setIsFlipped(false);
     setShowSuccessMessage(true);
-    // Auto-hide success message
     setTimeout(() => {
-      // Only hide if it's still showing the success message (user might have clicked "Got it!")
-      // Consider changing this to simply setShowSuccessMessage(false) if the check is not strictly needed.
-      if (showSuccessMessage) { 
-         setShowSuccessMessage(false);
-      }
+      setShowSuccessMessage(false);
     }, 6000); 
   };
-
-  // Removed useEffect that handled IntersectionObserver for scroll-triggered flip
-  // useEffect(() => {
-  //   const currentCardRef = cardRef.current;
-  //   if (!currentCardRef || !isFlipped) return;
-
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (!entry.isIntersecting && isFlipped && entry.intersectionRatio < 0.1 && !showSuccessMessage) {
-  //         setIsFlipped(false);
-  //       }
-  //     },
-  //     { threshold: [0, 0.1, 0.9, 1.0] }
-  //   );
-
-  //   observer.observe(currentCardRef);
-  //   return () => {
-  //     if (currentCardRef) {
-  //       observer.unobserve(currentCardRef);
-  //     }
-  //   }
-  // }, [isFlipped, showSuccessMessage]);
-
 
   return (
     <section id={id} className="py-16 md:py-24 fade-in-section">
       <div className="container mx-auto px-4 text-center">
-        {/* Removed ref={cardRef} as it's no longer used */}
         <div className="flip-card-outer w-full max-w-2xl mx-auto">
           <div className={`flip-card-inner ${isFlipped ? 'is-flipped' : ''}`}>
             {/* Front of the card */}
@@ -104,7 +74,6 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
 
             {/* Back of the card */}
             <div className="flip-card-back">
-              {/* ContactForm is now directly the back face content */}
               <ContactForm onSuccess={handleFormSuccess} />
             </div>
           </div>
