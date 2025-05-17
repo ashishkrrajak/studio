@@ -110,35 +110,36 @@ html {
 /* Hero section fade-in (runs once) */
 .fade-in-section {
   opacity: 0;
-  transform: translateX(-50px);
-  animation-name: fadeInFromLeft;
+  transform: translateX(-50px); /* Changed from translateY */
+  animation-name: fadeInFromLeft; /* Renamed keyframe */
   animation-duration: 0.8s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 0.1s;
+  animation-delay: 0.1s; /* Slight delay */
 }
 
-@keyframes fadeInFromLeft {
+@keyframes fadeInFromLeft { /* Renamed keyframe */
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-50px); /* Start from left */
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0); /* End at original position */
   }
 }
+
 
 /* Classes for repeatable scroll-triggered animation */
 .scroll-fade-trigger {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translateX(-50px); /* Initial state: off-screen to the left and transparent */
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .scroll-fade-trigger.visible {
   opacity: 1;
-  transform: translateX(0px);
+  transform: translateX(0px); /* Final state: on-screen and opaque */
 }
 
 
@@ -166,9 +167,7 @@ html {
 .testimonial-flip-card-outer {
   perspective: 1000px;
   height: 420px; /* Adjusted height for testimonials */
-  max-width: 600px; /* Max width for a single card */
-  margin-left: auto;
-  margin-right: auto;
+  /* max-width and margin auto removed, grid will handle this */
 }
 
 
@@ -221,5 +220,3 @@ html {
 .animate-fadeInHeroSnippet {
   animation: animateFadeInHeroSnippet 0.5s ease-out forwards;
 }
-
-    
