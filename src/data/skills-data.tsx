@@ -3,21 +3,14 @@
 import type { SkillItem } from '@/types';
 import Image from 'next/image';
 import {
-  // Coffee, // Replaced by JavaIcon
   Database,
   Type,
-  // Leaf, // Replaced by SpringIcon
   LibraryBig,
   Shapes,
   Network,
   Github,
-  // Archive, // Replaced by AWSS3Icon
-  // Zap, // Replaced by AWSLambdaIcon
-  // Construction, // Replaced by JenkinsIcon
-  // Send, // Replaced by PostmanIcon
   SearchCheck,
   Wand2,
-  // Keyboard, // Replaced by IntelliJIcon
   Atom,
   Layers3,
   Sparkles,
@@ -80,7 +73,7 @@ export const skills: SkillItem[] = [
   { name: 'CSS', icon: Css3Logo },
 
   // Frameworks & Concepts
-  { name: 'Spring', icon: SpringIcon }, // Renamed from Spring Boot based on user image
+  { name: 'Spring', icon: SpringIcon },
   { name: 'Angular', icon: AngularLogo },
   { name: 'React.js', icon: Atom },
   { name: 'Next.js', icon: Layers3 },
@@ -92,18 +85,20 @@ export const skills: SkillItem[] = [
   { name: 'PostgreSQL', icon: PostgreSQLIcon },
   { name: 'MySQL', icon: MySQLIcon },
   { name: 'Git/GitHub', icon: Github },
-  { name: 'AWS S3', icon: AWSS3Icon }, // Renamed from AWS Cloud Storage
+  { name: 'AWS S3', icon: AWSS3Icon },
   { name: 'AWS Lambda', icon: AWSLambdaIcon },
-  { name: 'Linux', icon: LinuxIcon }, // Added Linux
+  { name: 'Linux', icon: LinuxIcon },
 
   // Tools & Platforms
   { name: 'Jenkins', icon: JenkinsIcon },
   { name: 'Postman', icon: PostmanIcon },
   { name: 'Insomnia', icon: SearchCheck },
   { name: 'Tabnine', icon: Wand2 },
-  { name: 'IntelliJ IDEA', icon: IntelliJIcon }, // Renamed from Jet-Brains IDEs
+  { name: 'IntelliJ IDEA', icon: IntelliJIcon },
   { name: 'Gen AI', icon: Sparkles },
   { name: 'Firebase Studio', icon: Palette },
   { name: 'Chat GPT', icon: Bot },
   { name: 'Claude AI', icon: Cpu },
 ];
+
+    

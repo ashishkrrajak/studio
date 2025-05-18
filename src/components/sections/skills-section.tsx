@@ -5,7 +5,6 @@ import { skills } from '@/data/skills-data';
 
 export function SkillsSection() {
   return (
-    // Removed fade-in-section, will be handled by AnimateOnScrollWrapper
     <section id="skills" className="py-16 md:py-20 bg-card/50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">My Core Skills</h2>
@@ -25,3 +24,5 @@ export function SkillsSection() {
     </section>
   );
 }
+
+    

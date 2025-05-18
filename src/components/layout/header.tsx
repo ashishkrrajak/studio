@@ -48,7 +48,7 @@ export function Header() {
           <div className="md:hidden">
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-foreground/80 hover:text-primary">
+                <Button variant="ghost" size="icon" className="text-foreground/80 focus-visible:ring-primary transition-all duration-200 ease-in-out hover:shadow-[0_0_0_2px_hsl(var(--accent))_inset]">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>
@@ -87,7 +87,7 @@ export function Header() {
                 </nav>
                 <div className="p-4 border-t border-sidebar-border mt-auto">
                   <p className="text-xs text-muted-foreground text-center">
-                    &copy; {new Date().getFullYear()} Ashish K. Rajak
+                    &copy; 2025 Ashish K. Rajak
                   </p>
                 </div>
               </SheetContent>
