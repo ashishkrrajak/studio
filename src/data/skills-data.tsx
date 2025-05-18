@@ -3,9 +3,7 @@
 import type { SkillItem } from '@/types';
 import {
   Coffee,
-  FileCode2,
   Database,
-  Braces,
   Type,
   Leaf,
   LibraryBig,
@@ -20,48 +18,23 @@ import {
   Wand2,
   Keyboard,
   Atom,
-  Cloud,
-  Puzzle,
-  Repeat,
-  FastForward,
-  DatabaseZap,
-  Layers3, 
-  Sparkles, 
-  Palette,  
-  Bot,      
-  Cpu       
+  Layers3,
+  Sparkles,
+  Palette,
+  Bot,
+  Cpu
 } from 'lucide-react';
 
 // Simple SVG Logo Components with Brand Colors
-// Note: Lucide icons below will inherit color from the theme (accent color).
+
 const AngularLogo = () => (
   <svg viewBox="0 0 24 24" role="img" aria-label="Angular logo" className="w-5 h-5 mr-2">
-    {/* Red Shield Parts */}
     <path d="M12 2L2.96875 7.03125L4.5 19.5H19.5L21.0312 7.03125L12 2Z" fill="#DD0031"/>
-    {/* Inner White 'A' Shape */}
-    <path d="M12 2V11L5.5 7.5L12 2Z" fill="#B30027"/> {/* One side of the top part, slightly darker for depth */}
-    <path d="M12 2V11L18.5 7.5L12 2Z" fill="#B30027"/> {/* Other side of the top part */}
+    <path d="M12 2V11L5.5 7.5L12 2Z" fill="#B30027"/>
+    <path d="M12 2V11L18.5 7.5L12 2Z" fill="#B30027"/>
     <path d="M12 5.34375L6.21875 17H8.34375L9.34375 14.5H14.625L15.6562 17H17.75L12 5.34375ZM12 9.03125L13.8438 13.25H10.1562L12 9.03125Z" fill="white"/>
   </svg>
 );
-
-
-const DockerLogo = () => (
-  <svg viewBox="0 0 24 24" role="img" aria-label="Docker logo" className="w-5 h-5 mr-2" fill="#2496ED">
-    <path d="M21.95 9.93C21.43 6.46 18.52 4 15 4H9c-3.31 0-6 2.69-6 6s2.69 6 6 6h.59c.25 1.49.92 2.83 1.88 3.92.82.93 1.88 1.66 3.04 2 .26.08.53.12.8.12.88 0 1.68-.38 2.27-.99.47-.5.78-1.12.91-1.8.1-.53.02-1.09-.21-1.59-.59-1.26-1.94-2.04-3.44-2.04H13v-2h1.5c2.48 0 4.5-2.02 4.5-4.5 0-.16-.01-.32-.03-.48.17-.01.33-.02.5-.02 1.02 0 1.9.46 2.48 1.19zM10 11H8v-1h2v1zm0 2H8v-1h2v1zm0 2H8v-1h2v1zm2-4h-1v-1h1v1zm0 2h-1v-1h1v1zm0 2h-1v-1h1v1zm2-4h-1v-1h1v1zm0 2h-1v-1h1v1zm0 2h-1v-1h1v1zm3.5-1c-.83 0-1.5-.67-1.5-1.5S14.67 12 15.5 12s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
-  </svg>
-);
-
-const KubernetesLogo = () => (
-  <svg viewBox="0 0 24 24" role="img" aria-label="Kubernetes logo" className="w-5 h-5 mr-2" fill="#326CE5">
-    {/* Main ship wheel shape */}
-    <path d="M12 2l8.625 4.875V11.25L12 15.75l-8.625-4.5V6.875L12 2zm0 1.875L5.25 7.5v3l6.75 3.75 6.75-3.75v-3L12 3.875zM5.25 12.375l6.75 3.75v5.25L5.25 17.625v-5.25zm13.5 0v5.25L12 21.375v-5.25l6.75-3.75z"/>
-    {/* Spokes - these are typically lines, so fill might not be ideal, or they are part of the overall shape */}
-    {/* Center circle */}
-    <circle cx="12" cy="12" r="1.5" fill="white" />
- </svg>
-);
-
 
 const Html5Logo = () => (
   <svg viewBox="0 0 24 24" role="img" aria-label="HTML5 logo" className="w-5 h-5 mr-2">
@@ -81,12 +54,27 @@ const Css3Logo = () => (
   </svg>
 );
 
+const JavaScriptLogo = () => (
+  <svg viewBox="0 0 24 24" role="img" aria-label="JavaScript logo" className="w-5 h-5 mr-2">
+    <rect width="24" height="24" fill="#F7DF1E"/>
+    <path d="M4.342 18.018h2.582V13.86H9.36v4.158h2.58V9.775H9.36v3.248H6.924V9.775H4.342v8.243zm10.12-3.902c0 .864-.22 1.528-.66 1.991-.44.463-1.041.694-1.803.694-.82 0-1.448-.241-1.884-.724-.436-.483-.654-1.16-.654-2.033V9.775h2.55v4.158c0 .493.078.83.234 1.01.156.18.39.27.702.27.321 0 .563-.088.729-.264.166-.176.249-.505.249-.985V9.775h2.538v4.341z" fill="black"/>
+  </svg>
+);
+
+const PythonLogo = () => (
+  <svg viewBox="0 0 24 24" role="img" aria-label="Python logo" className="w-5 h-5 mr-2">
+    <rect x="2.5" y="2.5" width="19" height="19" rx="2" ry="2" fill="#3776AB"/>
+    <path d="M12 5.5c-2.43 0-4.55.98-5.08 2.74-.02.05-.03.1-.03.16v1.69c0 .3.13.58.35.78.22.2.5.32.8.32h2.13c.46 0 .83-.37.83-.83V9.5c0-.63.29-1.2.76-1.56.47-.36 1.04-.54 1.67-.54s1.2.18 1.67.54c.47.36.76.93.76 1.56v4.31c0 .46-.37.83-.83.83H9.5c-.3 0-.58-.13-.78-.35s-.32-.5-.32-.8V12.5c0-.63-.29-1.2-.76-1.56S6.6 10.4 6 10.4c-.63 0-1.2.18-1.67.54-.47.36-.76.93-.76 1.56v1.38c0 .05.01.1.03.16C4.03 16.3 5.93 18.5 8.5 18.5c2.43 0 4.55-.98 5.08-2.74.02-.05.03-.1.03-.16v-1.69c0-.3-.13-.58-.35-.78-.22-.2-.5-.32-.8-.32h-2.13c-.46 0-.83.37-.83.83V14.5c0 .63-.29 1.2-.76 1.56-.47.36-1.04.54-1.67.54s-1.2-.18-1.67-.54c-.47-.36-.76-.93-.76-1.56V9.69c0-.05-.01-.1-.03-.16C10.47 7.77 8.57 5.5 6 5.5c-2.43 0-4.55.98-5.08 2.74" fill="#FFD43B" transform="translate(5.5, 0)"/>
+  </svg>
+);
+
+
 export const skills: SkillItem[] = [
   // Languages
   { name: 'Java', icon: Coffee },
-  { name: 'Python', icon: FileCode2 },
+  { name: 'Python', icon: PythonLogo },
   { name: 'SQL', icon: Database },
-  { name: 'JavaScript', icon: Braces },
+  { name: 'JavaScript', icon: JavaScriptLogo },
   { name: 'TypeScript', icon: Type },
   { name: 'HTML', icon: Html5Logo },
   { name: 'CSS', icon: Css3Logo },
