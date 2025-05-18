@@ -11,7 +11,6 @@ export const professionalJourneyPoints: JourneyPoint[] = [
     details: [
       "Implemented a Bulk Upload module for 50,000+ Excel records, incorporating dynamic field mapping and validation logic, reducing manual data entry time by 40% and increasing throughput by 3 times.",
       "Integrated Cash Free payment gateway, enabling secure, real-time disbursal’s and automated transaction tracking, reducing transaction failures by 15% and improving payment processing time by 20%.",
-      "Integrated QC gift card API, allowing seamless issuance and redemption, which increased user engagement by 25% and contributed to a 20% uplift in user retention.",
       "Migrated a critical microservice from MySQL to PostgreSQL, optimizing complex queries and redesigning schema, improving data retrieval speed by 50% and ensuring better system scalability.",
       "Designed and implemented reusable, scalable Java modules, improving system performance by 30% and significantly enhancing front-end response times and user experience.",
       "Led and coordinated full-cycle API testing with QA using Postman and Swagger, ensuring 99% defect-free production releases and adherence to business logic requirements."

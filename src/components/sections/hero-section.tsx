@@ -44,7 +44,7 @@ export function HeroSection() {
             <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse md:block hidden"></div>
             
             <BlobImage
-              imageUrl="/images/profile.jpg" 
+              imageUrl="/images/profile_v1.png" 
               alt="Ashish Kumar Rajak - Java Full Stack Developer"
               className="relative z-10 w-72 h-72 md:w-96 md:h-96 transform transition-transform duration-500 group-hover:scale-105"
             />
