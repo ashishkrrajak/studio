@@ -5,7 +5,7 @@ import { Code2, TerminalSquare, Github } from 'lucide-react';
 export const codingProfiles: CodingProfile[] = [
   {
     name: "LeetCode",
-    url: "https://leetcode.com/ashishkumarrajak_java_dev/", 
+    url: "https://leetcode.com/u/ashishkrrajak/", 
     icon: Code2,
     username: "ashishkrrajak"
   },

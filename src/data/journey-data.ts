@@ -1,22 +1,17 @@
 // src/data/journey-data.ts
 import type { JourneyPoint } from '@/types';
-import { Building, Code, Briefcase, School, Zap, Cpu } from 'lucide-react';
+import { Building, Code, School, Zap, Cpu } from 'lucide-react'; // Removed Briefcase as it wasn't used for the new points
 
 export const professionalJourneyPoints: JourneyPoint[] = [
   {
     icon: Building,
-    title: "Senior Java Developer at Tech Solutions Inc.",
-    text: "Led development of scalable microservices using Spring Boot and Kafka. Mentored junior developers and championed best practices in Agile environment. Successfully delivered three major product features ahead of schedule."
+    title: "Software Engineer at Channel play SaaS Pvt Ltd",
+    text: "April 2024 - Present, Kolkata. Key contributions include implementing a Bulk Upload module for 50,000+ Excel records, incorporating dynamic field mapping and validation logic, which reduced manual data entry time by 40% and increased throughput by 3 times. Integrated Cash Free payment gateway, enabling secure, real-time disbursals and automated transaction tracking, reducing transaction failures by 15% and improving payment processing time by 20%. Integrated QC gift card API, allowing seamless issuance and redemption, which increased user engagement by 25% and contributed to a 20% uplift in user retention. Migrated a critical microservice from MySQL to PostgreSQL, optimizing complex queries and redesigning schema, improving data retrieval speed by 50% and ensuring better system scalability. Designed and implemented reusable, scalable Java modules, improving system performance by 30% and significantly enhancing front-end response times and user experience. Led and coordinated full-cycle API testing with QA using Postman and Swagger, ensuring 99% defect-free production releases and adherence to business logic requirements."
   },
   {
     icon: Code,
-    title: "Full Stack Developer at Innovate Apps Ltd.",
-    text: "Developed and maintained full-stack applications using Java, Spring, Angular, and React. Contributed to database design (SQL & NoSQL) and CI/CD pipeline automation. Key player in migrating legacy systems to modern cloud architecture on AWS."
-  },
-   {
-    icon: Briefcase,
-    title: "Software Engineer at Future Systems Co.",
-    text: "Started as a junior engineer, quickly progressing by contributing to various Java-based enterprise projects. Gained foundational experience in backend development, API design, and software testing methodologies."
+    title: "Associate Software Engineer at Channel play SaaS Pvt Ltd",
+    text: "Nov 2022 - March 2024, Kolkata. Implemented typo search functionality, leveraging fuzzy matching algorithms, improving search accuracy by 30% and reducing user frustration from incorrect queries. Utilized DFS-based algorithms for hierarchical data processing, reducing data traversal time by 40% and optimizing the handling of nested datasets in complex queries. Participated in the migration to Apache Tomcat 9 and MySQL 8, improving system compatibility, enhancing performance, and streamlining deployment workflows. Refactored core logic in performance-critical modules, achieving up to 90% reduction in execution time. Mentored 5+ junior developers on best coding practices, conducting regular code reviews and reducing post-deployment bugs by 25%. Created detailed API documentation and core logic documentation, streamlining on-boarding for new developers and reducing dependency on senior developers for routine queries by 30%."
   }
 ];
 
@@ -27,7 +22,7 @@ export const educationalJourneyPoints: JourneyPoint[] = [
     text: "XYZ University - Specialized in Distributed Systems and Advanced Algorithms. Thesis on 'Performance Optimization in Microservice Architectures'."
   },
   {
-    icon: Zap, // Using Zap as a generic "spark" or achievement icon
+    icon: Zap, 
     title: "Bachelor of Engineering in Information Technology",
     text: "ABC College of Engineering - Graduated with First Class Honours. Active member of the coding club and participated in national-level hackathons."
   },

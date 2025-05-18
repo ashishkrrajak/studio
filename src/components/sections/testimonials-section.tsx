@@ -9,7 +9,7 @@ import { Quote } from 'lucide-react';
 import { testimonials } from '@/data/testimonials-data';
 import type { Testimonial } from '@/types';
 
-const FADE_DURATION = 500; // ms
+const FADE_DURATION = 600; // ms
 const CYCLE_INTERVAL = 3000; // ms, time testimonial is visible before starting to fade out
 
 export function TestimonialsSection() {

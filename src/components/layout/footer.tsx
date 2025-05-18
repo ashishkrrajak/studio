@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="bg-card text-card-foreground py-10 mt-auto border-t border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center space-x-8 mb-6">
-          <a href="https://github.com/ashishkumarrajak" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110">
+          <a href="https://github.com/ashishkrrajak" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110">
             <Github className="h-7 w-7" />
           </a>
           <a href="https://linkedin.com/in/ashishkrrajak" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110">

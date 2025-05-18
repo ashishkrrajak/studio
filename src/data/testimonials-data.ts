@@ -35,14 +35,14 @@ export const testimonials: Testimonial[] = [
     quote: "A dedicated and highly skilled developer. Ashish was instrumental in optimizing our application's performance and scalability. Pleasure to work with!",
     name: "Ankit Raj", // Changed from Chen for variety
     title: "Software Engineer",
-    avatarUrl: "https://placehold.co/100x100.png?text=SW",
+    avatarUrl: "https://placehold.co/100x100.png?text=AR",
     dataAiHint: "tech professional"
   },
   {
     quote: "Ashish's technical acumen in Java and Spring Boot is top-notch. He's also a great communicator, making complex ideas easy to understand.",
     name: "Sanraj",
     title: "Software Engineer",
-    avatarUrl: "https://placehold.co/100x100.png?text=JR",
+    avatarUrl: "https://media.licdn.com/dms/image/v2/D4D03AQG4K_hH9xFmxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689423134731?e=1753315200&v=beta&t=lDHGdMT93aZbyF_4OXfDC76w2ZJh4QPsQuk8bMhJfI4",
     dataAiHint: "tech professional"
   }
 ];

@@ -1,4 +1,3 @@
-
 // src/components/sections/about-intro-section.tsx
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -22,10 +21,10 @@ export function AboutIntroSection() {
               </CardHeader>
               <CardContent className="p-0">
                 <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
-                  Hello! I'm Ashish Kumar Rajak, a dedicated Java Full Stack Developer. I specialize in architecting and developing robust, scalable, and high-performance applications, from backend microservices with Spring Boot to dynamic frontends with modern JavaScript frameworks.
+                  I am a Full-Stack Software Developer with 2.5+ years of experience in building scalable applications using Java, Spring Boot, and Angular. Skilled in back-end development, front-end integration, and REST API design, I am focused on solving complex challenges and delivering influential solutions in Agile environments.
                 </p>
                 <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
-                  My passion lies in tackling complex challenges and delivering elegant, efficient solutions. I thrive in collaborative environments, leveraging Agile methodologies to build impactful software. I'm proficient across the full development lifecycle, from concept to deployment and maintenance.
+                  My experience includes implementing high-impact features such as bulk data processing, payment gateway integrations, and API development, alongside critical system migrations and performance optimizations. I thrive in collaborative Agile settings, contributing to the full development lifecycle, from concept and design through to deployment and maintenance, always aiming to build impactful software.
                 </p>
                 <p className="text-lg text-foreground/90 mb-8 leading-relaxed">
                   Beyond coding, I'm an avid learner, always exploring new tools and techniques to enhance my craft and contribute to innovative projects.

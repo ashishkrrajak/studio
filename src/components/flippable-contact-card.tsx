@@ -90,8 +90,8 @@ export function FlippableContactCard({ id }: FlippableContactCardProps) {
                       <a href="mailto:ashish.kumarrajak765@gmail.com" className="flex items-center text-sm hover:underline">
                         <Mail className="mr-2 h-4 w-4" /> ashish.kumarrajak765@gmail.com
                       </a>
-                       <a href="tel:+919876543210" className="flex items-center text-sm hover:underline"> {/* Replace with actual phone number */}
-                        <Phone className="mr-2 h-4 w-4" /> +91 98765 43210 {/* Replace with actual phone number */}
+                       <a href="tel:+917004451549" className="flex items-center text-sm hover:underline"> {/* Replace with actual phone number */}
+                        <Phone className="mr-2 h-4 w-4" /> +91 70044 51549 {/* Replace with actual phone number */}
                       </a>
                       <a href="https://linkedin.com/in/ashishkrrajak" target="_blank" rel="noopener noreferrer" className="flex items-center text-sm hover:underline">
                         <Linkedin className="mr-2 h-4 w-4" /> Connect on LinkedIn

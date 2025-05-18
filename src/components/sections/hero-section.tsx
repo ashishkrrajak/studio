@@ -1,4 +1,3 @@
-
 // src/components/sections/hero-section.tsx
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -10,7 +9,6 @@ import BlobImage from '../blob-image';
 export function HeroSection() {
   return (
     <section id="home" className="relative min-h-[calc(100vh-5rem-70px)] flex items-center justify-center overflow-hidden fade-in-section py-16 md:py-0">
-      {/* The fade-in-section class here will make the hero animate once on load */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-primary/5 opacity-50"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -24,7 +22,7 @@ export function HeroSection() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-10 leading-relaxed max-w-xl mx-auto md:mx-0">
-              Hi, I'm Ashish Kumar Rajak - a <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-accent to-teal-400">Java Full Stack Developer</span> with a passion for building robust, scalable, and efficient applications.
+              Hi, I'm Ashish Kumar Rajak - a <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-accent to-teal-400">Full-Stack Software Developer</span> with 2.5+ years of experience in building scalable applications using Java, Spring Boot, and Angular. Skilled in back-end development, front-end integration, and REST API design, focused on solving complex challenges and delivering influential solutions in Agile environments.
             </p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
               <Button
@@ -46,7 +44,7 @@ export function HeroSection() {
             <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse md:block hidden"></div>
             
             <BlobImage
-              imageUrl="/images/profile_v1.png" 
+              imageUrl="/images/profile.jpg" 
               alt="Ashish Kumar Rajak - Java Full Stack Developer"
               className="relative z-10 w-72 h-72 md:w-96 md:h-96 transform transition-transform duration-500 group-hover:scale-105"
             />
