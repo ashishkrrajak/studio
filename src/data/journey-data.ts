@@ -1,7 +1,7 @@
 
 // src/data/journey-data.ts
 import type { JourneyPoint } from '@/types';
-import { Building, Code, School, Zap, Cpu } from 'lucide-react';
+import { Building, Code, School } from 'lucide-react';
 
 export const professionalJourneyPoints: JourneyPoint[] = [
   {
@@ -35,20 +35,31 @@ export const professionalJourneyPoints: JourneyPoint[] = [
 export const educationalJourneyPoints: JourneyPoint[] = [
   {
     icon: School,
-    title: "Master of Science in Computer Science",
-    date: "Year - Year", // Placeholder, update as needed
-    details: ["XYZ University - Specialized in Distributed Systems and Advanced Algorithms. Thesis on 'Performance Optimization in Microservice Architectures'."]
+    title: "Bachelor of Technology in Electronics And Communications",
+    date: "Oct 2019 - Jul 2022, Kolkata", 
+    details: [
+      "Heritage Institute Of Technology, Kolkata.",
+      "Graduated with a B.Tech in Electronics and Communications.",
+      "Actively engaged in technical workshops and coding competitions, enhancing practical skills."
+    ]
   },
   {
-    icon: Zap, 
-    title: "Bachelor of Engineering in Information Technology",
-    date: "Year - Year", // Placeholder, update as needed
-    details: ["ABC College of Engineering - Graduated with First Class Honours. Active member of the coding club and participated in national-level hackathons."]
+    icon: School, 
+    title: "Diploma in Electronics And Communications",
+    date: "Jul 2016 - Aug 2019, Ranchi",
+    details: [
+      "Government Polytechnic, Ranchi.",
+      "Served as Cultural President, successfully organizing and leading various college events and fests."
+    ]
   },
   {
-    icon: Cpu,
-    title: "Certifications & Continuous Learning",
-    date: "Ongoing", // Placeholder, update as needed
-    details: ["AWS Certified Developer, Oracle Certified Professional Java Programmer. Continuously learning through online courses on platforms like Coursera and Udemy, focusing on new technologies in cloud computing and big data."]
+    icon: School,
+    title: "Matriculation",
+    date: "Completed 2016, Gomoh, Dhanbad", 
+    details: [
+      "Kendriya Vidyalaya, Gomoh.",
+      "Actively participated in Scouts and Guides, developing teamwork and leadership skills."
+    ]
   }
 ];
+
