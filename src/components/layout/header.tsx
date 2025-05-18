@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { Menu, Home, User, Wrench, Briefcase, Mail } from 'lucide-react';
 import * as React from 'react';
 
@@ -27,7 +27,7 @@ export function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1 items-center">
-            {navLinks.map((link) => ( // Now includes "Contact"
+            {navLinks.map((link) => (
                <Button
                 key={link.label}
                 asChild
@@ -51,18 +51,19 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="left" className="w-[280px] p-0 flex flex-col">
                 <div className="p-5 border-b">
-                  <SheetClose asChild>
-                  <Link href="/" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-                    Ashish Kumar Rajak
-                  </Link>
-                  </SheetClose>
+                  <SheetTitle asChild>
+                    <SheetClose asChild>
+                      <Link href="/" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                        Ashish Kumar Rajak
+                      </Link>
+                    </SheetClose>
+                  </SheetTitle>
                 </div>
                 <nav className="flex-grow p-4 space-y-2">
                   <SheetClose asChild>
                     <Link 
                       href="/" 
                       className="flex items-center py-3 px-4 rounded-lg text-foreground/90 hover:bg-accent hover:text-accent-foreground transition-colors"
-                      // onClick={() => setIsSheetOpen(false)} // Removed redundant onClick
                     >
                       <Home className="mr-3 h-5 w-5" />
                       Home
@@ -73,7 +74,6 @@ export function Header() {
                       <Link
                         href={link.href}
                         className="flex items-center py-3 px-4 rounded-lg text-foreground/90 hover:bg-accent hover:text-accent-foreground transition-colors"
-                        // onClick={() => setIsSheetOpen(false)} // Removed redundant onClick
                       >
                         <link.icon className="mr-3 h-5 w-5" />
                         {link.label}
