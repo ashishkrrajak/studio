@@ -28,6 +28,12 @@ const nextConfig: NextConfig = {
         hostname: 'img.freepik.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.im.ge',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

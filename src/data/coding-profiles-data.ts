@@ -7,18 +7,18 @@ export const codingProfiles: CodingProfile[] = [
     name: "LeetCode",
     url: "https://leetcode.com/ashishkumarrajak_java_dev/", 
     icon: Code2,
-    username: "ashish_java_dev"
+    username: "ashishkrrajak"
   },
   {
     name: "HackerRank",
-    url: "https://www.hackerrank.com/profile/ashishkumarrajak_java_dev", 
+    url: "https://www.hackerrank.com/profile/ashishkrrajak", 
     icon: TerminalSquare,
-    username: "ashish_codes_java"
+    username: "ashishkrrajak"
   },
   {
     name: "GitHub",
-    url: "https://github.com/ashishkumarrajak", 
+    url: "https://github.com/ashishkrrajak", 
     icon: Github,
-    username: "ashishkumarrajak"
+    username: "ashishkrrajak"
   }
 ];

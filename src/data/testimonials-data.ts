@@ -5,51 +5,44 @@ import type { Testimonial } from '@/types';
 export const testimonials: Testimonial[] = [
   {
     quote: "Ashish is a phenomenal Java Full Stack Developer. His problem-solving skills and deep understanding of the Spring ecosystem were invaluable to our project's success. A true team player!",
-    name: "Emily Carter",
-    title: "Lead Software Architect, Tech Solutions Inc.",
-    avatarUrl: "https://placehold.co/100x100.png?text=EC",
-    dataAiHint: "architect person"
+    name: "Vaibhaw Soni",
+    title: "Software Engineer",
+    avatarUrl: "https://i.im.ge/2025/05/15/v8yF5T.1000027700-removebg-preview-1-1.png",
+    dataAiHint: "tech professional"
   },
   {
     quote: "Ashish's ability to seamlessly bridge backend and frontend development is remarkable. He consistently delivered robust and scalable solutions. Highly recommended!",
-    name: "Michael B. Chen", // Changed from Jordan for variety
-    title: "Engineering Manager, Innovate Solutions",
-    avatarUrl: "https://placehold.co/100x100.png?text=MC",
-    dataAiHint: "manager professional"
+    name: "Ankit Kumar", // Changed from Jordan for variety
+    title: "Software Engineer",
+    avatarUrl: "https://media.licdn.com/dms/image/v2/D5603AQGvxW3Vd5eXmw/profile-displayphoto-shrink_800_800/B56ZOmnhc9GoAg-/0/1733667199592?e=1752710400&v=beta&t=eLzEd1svGtwjDrrfPiQn2qKEvPb3Nx_LbupJUocWudg",
+    dataAiHint: "tech professional"
   },
   {
     quote: "Working alongside Ashish was a masterclass in clean code and efficient design. His dedication to quality and collaborative spirit make him a standout developer.",
-    name: "Priya Sharma",
-    title: "Senior Backend Engineer, CloudNine Ltd.",
-    avatarUrl: "https://placehold.co/100x100.png?text=PS",
-    dataAiHint: "engineer female"
+    name: "Sudipta Samanta",
+    title: "Senior Software Engineer - Mobile",
+    avatarUrl: "https://media.licdn.com/dms/image/v2/C5603AQH5Z_ksaiOB4g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1594881554401?e=1752710400&v=beta&t=ceD7zHMIBuRQy3gfwirOzE3e3WYq2e9r0N4CcmaiTVc",
+    dataAiHint: "tech professional"
   },
   {
-    quote: "Ashish has a keen eye for detail and a strong commitment to delivering high-quality software. His expertise in microservices was a huge asset.",
-    name: "David Lee",
-    title: "Product Owner, Agile Dynamics",
-    avatarUrl: "https://placehold.co/100x100.png?text=DL",
-    dataAiHint: "professional man"
+    quote: "Ashish has a keen eye for detail and a strong commitment to delivering high-quality software Solutions. His expertise in microservices was a huge asset.",
+    name: "Anagh Bhattacharjee",
+    title: "Senior Flutter Developer",
+    avatarUrl: "https://media.licdn.com/dms/image/v2/D4D03AQHNoxyXLQB97g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1667125968230?e=1752710400&v=beta&t=XfJPuap9_2hjiRO7KLxAynxurIV7mC6pmo8GQrsetUs",
+    dataAiHint: "tech professional"
   },
   {
     quote: "A dedicated and highly skilled developer. Ashish was instrumental in optimizing our application's performance and scalability. Pleasure to work with!",
-    name: "Sophia Williams", // Changed from Chen for variety
-    title: "DevOps Lead, NextGen Systems",
+    name: "Ankit Raj", // Changed from Chen for variety
+    title: "Software Engineer",
     avatarUrl: "https://placehold.co/100x100.png?text=SW",
     dataAiHint: "tech professional"
   },
   {
     quote: "Ashish's technical acumen in Java and Spring Boot is top-notch. He's also a great communicator, making complex ideas easy to understand.",
-    name: "James Rodriguez",
-    title: "Tech Lead, Quantum Leap AI",
+    name: "Sanraj",
+    title: "Software Engineer",
     avatarUrl: "https://placehold.co/100x100.png?text=JR",
-    dataAiHint: "developer male"
-  },
-  {
-    quote: "I was consistently impressed by Ashish's proactive approach and his ability to deliver features that exceeded expectations. A valuable asset to any team.",
-    name: "Olivia Garcia",
-    title: "Project Manager, AlphaSoft",
-    avatarUrl: "https://placehold.co/100x100.png?text=OG",
-    dataAiHint: "manager woman"
+    dataAiHint: "tech professional"
   }
 ];
