@@ -18,6 +18,9 @@ export function Header() {
     { href: "/#contact", label: "Contact", icon: Mail },
   ];
 
+  // Filter out "Contact" link for desktop view
+  const desktopNavLinks = navLinks.filter(link => link.label !== "Contact");
+
   return (
     <header className="bg-background/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 py-3 border-b border-border/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,7 +31,7 @@ export function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1 items-center">
-            {navLinks.map((link) => (
+            {desktopNavLinks.map((link) => (
                <Button
                 key={link.label}
                 asChild
@@ -70,7 +73,7 @@ export function Header() {
                       Home
                     </Link>
                   </SheetClose>
-                  {navLinks.map((link) => (
+                  {navLinks.map((link) => ( // Mobile nav still uses all navLinks
                     <SheetClose asChild key={link.label}>
                       <Link
                         href={link.href}
