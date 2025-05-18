@@ -26,24 +26,34 @@ export function EducationalJourneySection() {
               {/* Card container */}
               <div className="w-full md:w-5/12">
                 <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow border-border/70 p-6 rounded-lg">
-                   {/* Mobile icon and title */}
+                   {/* Mobile icon, title, date, and institute name */}
                    <div className="flex items-start md:hidden mb-4">
                      <div className="w-8 h-8 bg-primary rounded-full z-10 border-4 border-card shadow-lg flex items-center justify-center mr-4 mt-1 shrink-0">
                        <point.icon className="h-4 w-4 text-primary-foreground" />
                      </div>
                      <div>
                        <h3 className="text-xl font-semibold text-accent mb-1">{point.title}</h3>
-                       <p className="text-sm text-muted-foreground mb-3">{point.date}</p>
+                       <p className="text-sm text-muted-foreground mb-1">{point.date}</p>
+                       {point.details.length > 0 && (
+                         <p className="text-sm font-medium text-foreground/90 mb-3">{point.details[0]}</p>
+                       )}
                      </div>
                   </div>
-                   {/* Desktop title and date */}
+                   {/* Desktop title, date, and institute name */}
                    <h3 className="hidden md:block text-xl font-semibold text-accent mb-1">{point.title}</h3>
-                   <p className="hidden md:block text-sm text-muted-foreground mb-3">{point.date}</p>
-                  <ul className="space-y-2 list-disc list-inside text-foreground/80 leading-relaxed">
-                    {point.details.map((detail, detailIndex) => (
-                      <li key={detailIndex}>{detail}</li>
-                    ))}
-                  </ul>
+                   <p className="hidden md:block text-sm text-muted-foreground mb-1">{point.date}</p>
+                   {point.details.length > 0 && (
+                     <p className="hidden md:block text-sm font-medium text-foreground/90 mb-3">{point.details[0]}</p>
+                   )}
+                  
+                  {/* Remaining details as bullet points */}
+                  {point.details.length > 1 && (
+                    <ul className="space-y-2 list-disc list-inside text-foreground/80 leading-relaxed">
+                      {point.details.slice(1).map((detail, detailIndex) => (
+                        <li key={detailIndex}>{detail}</li>
+                      ))}
+                    </ul>
+                  )}
                 </Card>
               </div>
             </div>
