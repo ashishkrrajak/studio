@@ -4,7 +4,6 @@ import type { SkillItem } from '@/types';
 import Image from 'next/image';
 import {
   Database, // For SQL
-  Type,     // For TypeScript
   LibraryBig, // For Collections
   Shapes,   // For OOP
   Network,  // For Data Structures
@@ -15,17 +14,17 @@ import {
   Palette,  // For Firebase Studio
   Bot,      // For Chat GPT
   Cpu,       // For Claude AI
-  Send,      // For Postman (reverted to Lucide)
-  Leaf,      // For Spring
-  Zap,       // For AWS Lambda
-  Archive,   // For AWS S3 / Cloud Storage
-  Construction, // For Jenkins
-  Keyboard, // For IntelliJ / Jetbrains
-  Coffee,    // For Java (fallback if image fails or for other uses)
-  FileCode2, // For Python (fallback)
-  Braces,    // For JavaScript (fallback)
-  Atom, // For React
-  // Layers3, // Was used for Next.js, now replaced
+  Send,      // For Postman
+  // Leaf,      // For Spring (replaced by image)
+  // Coffee,    // For Java (replaced by image)
+  // FileCode2, // For Python (replaced by image)
+  // Braces,    // For JavaScript (replaced by image)
+  // Atom, // For React (replaced by image)
+  // Zap,       // For AWS Lambda (replaced by image)
+  // Archive,   // For AWS S3 / Cloud Storage (replaced by image)
+  Construction, // For Jenkins (replaced by image)
+  Keyboard, // For IntelliJ / Jetbrains (replaced by image)
+  // Type, // For TypeScript (replaced by image)
 } from 'lucide-react';
 
 // --- Image-based Icon Components from icons8.com & other sources ---
@@ -38,7 +37,7 @@ const AWSLambdaIcon = () => (<Image src="https://img.icons8.com/?size=100&id=Y9K
 const AWSS3Icon = () => (<Image src="https://img.icons8.com/?size=100&id=33039&format=png&color=000000" alt="AWS S3 icon" width={20} height={20} />);
 const MySQLIcon = () => (<Image src="https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000" alt="MySQL icon" width={20} height={20} />);
 const PostgreSQLIcon = () => (<Image src="https://img.icons8.com/?size=100&id=38561&format=png&color=000000" alt="PostgreSQL icon" width={20} height={20} />);
-const JenkinsIcon = () => (<Image src="https://img.icons8.com/?size=100&id=39292&format=png&color=000000" alt="Jenkins icon" width={20} height={20} />);
+const JenkinsIconComponent = () => (<Image src="https://img.icons8.com/?size=100&id=39292&format=png&color=000000" alt="Jenkins icon" width={20} height={20} />);
 const LinuxIcon = () => (<Image src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux icon" width={20} height={20} />);
 
 const ReactJsIcon = () => (<Image src="https://img.icons8.com/?size=100&id=123603&format=png&color=000000" alt="React.js icon" width={20} height={20} />);
@@ -47,6 +46,8 @@ const TailwindCssIcon = () => (<Image src="https://img.icons8.com/?size=100&id=4
 const HtmlIcon = () => (<Image src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="HTML icon" width={20} height={20} />);
 const CssIcon = () => (<Image src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000" alt="CSS icon" width={20} height={20} />);
 const BootstrapIcon = () => (<Image src="https://img.icons8.com/?size=100&id=PndQWK6M1Hjo&format=png&color=000000" alt="Bootstrap icon" width={20} height={20} />);
+const TypeScriptIconComponent = () => (<Image src="https://img.icons8.com/?size=100&id=uJM6fQYqDaZK&format=png&color=000000" alt="TypeScript icon" width={20} height={20} />);
+
 
 const NextJsIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256" className="w-5 h-5">
@@ -85,7 +86,7 @@ export const skills: SkillItem[] = [
   { name: 'Python', icon: PythonIconComponent },
   { name: 'SQL', icon: Database },
   { name: 'JavaScript', icon: JavaScriptIconComponent },
-  { name: 'TypeScript', icon: Type },
+  { name: 'TypeScript', icon: TypeScriptIconComponent },
   { name: 'HTML', icon: HtmlIcon },
   { name: 'CSS', icon: CssIcon },
 
@@ -109,7 +110,7 @@ export const skills: SkillItem[] = [
   { name: 'Linux', icon: LinuxIcon },
 
   // Tools & Platforms
-  { name: 'Jenkins', icon: JenkinsIcon },
+  { name: 'Jenkins', icon: JenkinsIconComponent },
   { name: 'Postman', icon: Send },
   { name: 'Insomnia', icon: SearchCheck },
   { name: 'Tabnine', icon: Wand2 },
