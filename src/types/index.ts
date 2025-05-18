@@ -1,3 +1,4 @@
+
 // src/types/index.ts
 import type React from 'react';
 
@@ -12,7 +13,8 @@ export interface Testimonial {
 export interface JourneyPoint {
   icon: React.ElementType;
   title: string;
-  text: string;
+  date: string; // Added date field
+  details: string[]; // Changed from text: string to details: string[]
 }
 
 export interface CodingProfile {
