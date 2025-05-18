@@ -27,7 +27,7 @@ export function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1 items-center">
-            {navLinks.slice(0, 3).map((link) => ( // Exclude Contact from desktop nav for now if it's mainly for hero CTA
+            {navLinks.map((link) => ( // Now includes "Contact"
                <Button
                 key={link.label}
                 asChild
@@ -62,7 +62,7 @@ export function Header() {
                     <Link 
                       href="/" 
                       className="flex items-center py-3 px-4 rounded-lg text-foreground/90 hover:bg-accent hover:text-accent-foreground transition-colors"
-                      onClick={() => setIsSheetOpen(false)}
+                      // onClick={() => setIsSheetOpen(false)} // Removed redundant onClick
                     >
                       <Home className="mr-3 h-5 w-5" />
                       Home
@@ -73,7 +73,7 @@ export function Header() {
                       <Link
                         href={link.href}
                         className="flex items-center py-3 px-4 rounded-lg text-foreground/90 hover:bg-accent hover:text-accent-foreground transition-colors"
-                        onClick={() => setIsSheetOpen(false)}
+                        // onClick={() => setIsSheetOpen(false)} // Removed redundant onClick
                       >
                         <link.icon className="mr-3 h-5 w-5" />
                         {link.label}
