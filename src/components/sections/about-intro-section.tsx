@@ -21,19 +21,13 @@ export function AboutIntroSection() {
               </CardHeader>
               <CardContent className="p-0">
                 <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
-                  I am a Full-Stack Software Developer passionate about building scalable, production-ready applications using Java, Spring Boot, and Angular. My expertise spans backend engineering, RESTful API design, and frontend integration allowing me to contribute effectively across the entire software development lifecycle.
+                  I’m a Full-Stack Software Developer focused on building scalable and efficient applications using Java, Spring Boot, and Angular. My work spans backend development, API design, and frontend integration, with experience delivering features like bulk data processing, payment gateway integration, and system migrations.
                 </p>
                 <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
-                  I've worked on impactful features such as bulk data processing, payment gateway integrations, and complex system migrations. These experiences have strengthened my technical foundation and sharpened my ability to think critically, collaborate effectively, and deliver meaningful solutions in Agile environments.
-                </p>
-                <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
-                  But beyond technologies and tools, my journey has been defined by constant learning and growth. I’ve faced technical roadblocks, legacy challenges, and high-pressure situations that tested both my skills and mindset. These moments pushed me to go deeper into debugging, into design thinking, and into becoming more adaptable and resilient.
-                </p>
-                <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
-                  Each challenge has been a stepping stone, helping me evolve not just as a developer, but as a thinker and a problem-solver. I've learned to focus on building solutions that are not only functional, but scalable, maintainable, and user-focused.
+                  Throughout my journey, I’ve faced real-world challenges that pushed me to grow—debugging complex issues, optimizing performance, and adapting to evolving requirements. These experiences taught me to think beyond code, consider long-term maintainability, and build with both users and systems in mind.
                 </p>
                 <p className="text-lg text-foreground/90 mb-8 leading-relaxed">
-                  Driven by curiosity and a growth mindset, I continuously explore new tools, frameworks, and architectural patterns to refine my craft. I see every project as an opportunity not just to create quality software, but to learn, contribute, and grow.
+                  Driven by curiosity and a growth mindset, I’m always learning—whether it’s a new framework, architectural pattern, or tool that can improve development. I strive to create meaningful software and continuously evolve as a developer.
                 </p>
               </CardContent>
             </div>
