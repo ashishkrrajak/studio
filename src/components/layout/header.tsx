@@ -1,8 +1,22 @@
 // src/components/layout/header.tsx
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Menu, Home, User, Wrench, Briefcase, Mail } from 'lucide-react';
+import * as React from 'react';
 
 export function Header() {
+  const [isSheetOpen, setIsSheetOpen] = React.useState(false);
+
+  const navLinks = [
+    { href: "/#about", label: "About", icon: User },
+    { href: "/#skills", label: "Skills", icon: Wrench },
+    { href: "/#journey", label: "Journey", icon: Briefcase },
+    { href: "/#contact", label: "Contact", icon: Mail },
+  ];
+
   return (
     <header className="bg-background/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 py-3 border-b border-border/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,37 +24,70 @@ export function Header() {
           <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent hover:opacity-80 transition-opacity tracking-tight">
             Ashish Kumar Rajak
           </Link>
-          <nav className="hidden md:flex space-x-4 items-center">
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className="text-foreground/80 focus-visible:ring-primary transition-all duration-200 ease-in-out hover:shadow-[0_0_0_2px_hsl(var(--accent))]"
-            >
-              <Link href="/#about">About</Link>
-            </Button>
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className="text-foreground/80 focus-visible:ring-primary transition-all duration-200 ease-in-out hover:shadow-[0_0_0_2px_hsl(var(--accent))]"
-            >
-              <Link href="/#skills">Skills</Link>
-            </Button>
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className="text-foreground/80 focus-visible:ring-primary transition-all duration-200 ease-in-out hover:shadow-[0_0_0_2px_hsl(var(--accent))]"
-            >
-              <Link href="/#journey">Journey</Link>
-            </Button>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-1 items-center">
+            {navLinks.slice(0, 3).map((link) => ( // Exclude Contact from desktop nav for now if it's mainly for hero CTA
+               <Button
+                key={link.label}
+                asChild
+                variant="ghost"
+                size="sm"
+                className="text-foreground/80 focus-visible:ring-primary transition-all duration-200 ease-in-out hover:shadow-[0_0_0_2px_hsl(var(--accent))]"
+              >
+                <Link href={link.href}>{link.label}</Link>
+              </Button>
+            ))}
           </nav>
+
+          {/* Mobile Navigation Trigger */}
           <div className="md:hidden">
-            {/* Placeholder for mobile menu icon */}
-            <button className="text-foreground/80 hover:text-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            </button>
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="text-foreground/80 hover:text-primary">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[280px] p-0 flex flex-col">
+                <div className="p-5 border-b">
+                  <SheetClose asChild>
+                  <Link href="/" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                    Ashish Kumar Rajak
+                  </Link>
+                  </SheetClose>
+                </div>
+                <nav className="flex-grow p-4 space-y-2">
+                  <SheetClose asChild>
+                    <Link 
+                      href="/" 
+                      className="flex items-center py-3 px-4 rounded-lg text-foreground/90 hover:bg-accent hover:text-accent-foreground transition-colors"
+                      onClick={() => setIsSheetOpen(false)}
+                    >
+                      <Home className="mr-3 h-5 w-5" />
+                      Home
+                    </Link>
+                  </SheetClose>
+                  {navLinks.map((link) => (
+                    <SheetClose asChild key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="flex items-center py-3 px-4 rounded-lg text-foreground/90 hover:bg-accent hover:text-accent-foreground transition-colors"
+                        onClick={() => setIsSheetOpen(false)}
+                      >
+                        <link.icon className="mr-3 h-5 w-5" />
+                        {link.label}
+                      </Link>
+                    </SheetClose>
+                  ))}
+                </nav>
+                <div className="p-4 border-t mt-auto">
+                  <p className="text-xs text-muted-foreground text-center">
+                    &copy; {new Date().getFullYear()} Ashish K. Rajak
+                  </p>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
