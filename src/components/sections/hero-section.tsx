@@ -13,28 +13,32 @@ const TYPING_PERIOD = 1500; // Time to pause after typing or deleting
 const TYPING_SPEED_INITIAL = 120;
 const DELETING_SPEED = 60;
 
+const TITLES_TO_TYPE = [
+  "JAVA FULL STACK DEVELOPER",
+  "Backend Developer",
+  "Software Engineer"
+];
+
 export function HeroSection() {
   const [typedText, setTypedText] = React.useState('');
   const [isDeleting, setIsDeleting] = React.useState(false);
   const [loopNum, setLoopNum] = React.useState(0);
   const [typingSpeed, setTypingSpeed] = React.useState(TYPING_SPEED_INITIAL);
 
-  const fullTitle = "JAVA FULL STACK DEVELOPER";
-
   React.useEffect(() => {
     const handleTyping = () => {
-      const currentText = fullTitle;
+      const currentTextToType = TITLES_TO_TYPE[loopNum % TITLES_TO_TYPE.length];
       let newText;
 
       if (isDeleting) {
-        newText = currentText.substring(0, typedText.length - 1);
+        newText = typedText.substring(0, typedText.length - 1);
       } else {
-        newText = currentText.substring(0, typedText.length + 1);
+        newText = currentTextToType.substring(0, typedText.length + 1);
       }
 
       setTypedText(newText);
 
-      if (!isDeleting && newText === currentText) {
+      if (!isDeleting && newText === currentTextToType) {
         // Pause at end of typing
         setTypingSpeed(TYPING_PERIOD);
         setIsDeleting(true);
@@ -52,7 +56,7 @@ export function HeroSection() {
 
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
-  }, [typedText, isDeleting, typingSpeed, loopNum, fullTitle]);
+  }, [typedText, isDeleting, typingSpeed, loopNum]);
 
   return (
     <section id="home" className="relative min-h-[calc(100vh-5rem-70px)] flex items-center justify-center overflow-hidden fade-in-section py-16 md:py-0">
