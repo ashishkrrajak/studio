@@ -12,7 +12,7 @@ export function SkillsSection() {
             <Badge 
               key={skill.name} 
               variant="secondary" 
-              className="text-md px-4 py-3 bg-secondary/80 text-secondary-foreground hover:bg-secondary transition-all duration-200 ease-in-out hover:scale-110 cursor-default shadow-md flex items-center justify-center space-x-2 min-w-40" // Added min-w-40 and justify-center
+              className="flex items-center justify-center space-x-2 cursor-default shadow-md transition-all duration-200 ease-in-out hover:scale-110 px-3 py-2 text-sm min-w-32 sm:px-4 sm:py-3 sm:text-md sm:min-w-40 bg-secondary/80 text-secondary-foreground hover:bg-secondary"
             >
               <skill.icon />
               <span>{skill.name}</span>
