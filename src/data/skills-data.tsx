@@ -15,16 +15,7 @@ import {
   Bot,      // For Chat GPT
   Cpu,       // For Claude AI
   Send,      // For Postman
-  // Leaf,      // For Spring (replaced by image)
-  // Coffee,    // For Java (replaced by image)
-  // FileCode2, // For Python (replaced by image)
-  // Braces,    // For JavaScript (replaced by image)
-  // Atom, // For React (replaced by image)
-  // Zap,       // For AWS Lambda (replaced by image)
-  // Archive,   // For AWS S3 / Cloud Storage (replaced by image)
   Construction, // For Jenkins (replaced by image)
-  Keyboard, // For IntelliJ / Jetbrains (replaced by image)
-  // Type, // For TypeScript (replaced by image)
 } from 'lucide-react';
 
 // --- Image-based Icon Components from icons8.com & other sources ---
@@ -47,6 +38,7 @@ const HtmlIcon = () => (<Image src="https://img.icons8.com/?size=100&id=20909&fo
 const CssIcon = () => (<Image src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000" alt="CSS icon" width={20} height={20} />);
 const BootstrapIcon = () => (<Image src="https://img.icons8.com/?size=100&id=PndQWK6M1Hjo&format=png&color=000000" alt="Bootstrap icon" width={20} height={20} />);
 const TypeScriptIconComponent = () => (<Image src="https://img.icons8.com/?size=100&id=uJM6fQYqDaZK&format=png&color=000000" alt="TypeScript icon" width={20} height={20} />);
+const VSCodeIcon = () => (<Image src="https://img.icons8.com/?size=100&id=0OQR1FYCuA9f&format=png&color=000000" alt="VS Code icon" width={20} height={20} />);
 
 
 const NextJsIcon = () => (
@@ -115,6 +107,7 @@ export const skills: SkillItem[] = [
   { name: 'Insomnia', icon: SearchCheck },
   { name: 'Tabnine', icon: Wand2 },
   { name: 'IntelliJ IDEA', icon: IntelliJIcon },
+  { name: 'VS Code', icon: VSCodeIcon },
   { name: 'Gen AI', icon: Sparkles },
   { name: 'Firebase Studio', icon: Palette },
   { name: 'Chat GPT', icon: Bot },
