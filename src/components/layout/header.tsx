@@ -1,4 +1,3 @@
-
 // src/components/layout/header.tsx
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -16,7 +15,7 @@ export function Header() {
               asChild
               variant="ghost"
               size="sm"
-              className="text-foreground/80 hover:text-primary focus-visible:ring-primary transition-colors"
+              className="text-foreground/80 focus-visible:ring-primary transition-all duration-200 ease-in-out hover:shadow-[0_0_0_2px_hsl(var(--accent))]"
             >
               <Link href="/#about">About</Link>
             </Button>
@@ -24,7 +23,7 @@ export function Header() {
               asChild
               variant="ghost"
               size="sm"
-              className="text-foreground/80 hover:text-primary focus-visible:ring-primary transition-colors"
+              className="text-foreground/80 focus-visible:ring-primary transition-all duration-200 ease-in-out hover:shadow-[0_0_0_2px_hsl(var(--accent))]"
             >
               <Link href="/#skills">Skills</Link>
             </Button>
@@ -32,7 +31,7 @@ export function Header() {
               asChild
               variant="ghost"
               size="sm"
-              className="text-foreground/80 hover:text-primary focus-visible:ring-primary transition-colors"
+              className="text-foreground/80 focus-visible:ring-primary transition-all duration-200 ease-in-out hover:shadow-[0_0_0_2px_hsl(var(--accent))]"
             >
               <Link href="/#journey">Journey</Link>
             </Button>
