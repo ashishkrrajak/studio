@@ -15,8 +15,8 @@ const DELETING_SPEED = 60;
 
 const TITLES_TO_TYPE = [
   "JAVA FULL STACK DEVELOPER",
-  "Backend Developer",
-  "Software Engineer"
+  "BACKEND DEVELOPER",
+  "SOFTWARE ENGINEER"
 ];
 
 export function HeroSection() {
