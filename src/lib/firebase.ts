@@ -1,16 +1,16 @@
-
 // src/lib/firebase.ts
 import { initializeApp, getApps, type FirebaseApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID, // Optional
+  apiKey: "AIzaSyBZGm3k6UVTR_qMB4oo0K7EINzVPTDWXwI",
+  authDomain: "ashishs-portfolio.firebaseapp.com",
+  projectId: "ashishs-portfolio",
+  storageBucket: "ashishs-portfolio.appspot.com", // Corrected based on common Firebase patterns, user had .firebasestorage.app
+  messagingSenderId: "148110925176",
+  appId: "1:148110925176:web:cd7392ca8d5f06ac697c8d"
+  // measurementId is optional and not provided, so it's omitted
 };
 
 let app: FirebaseApp;
