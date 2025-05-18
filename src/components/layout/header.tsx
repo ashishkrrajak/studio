@@ -1,9 +1,10 @@
+
 // src/components/layout/header.tsx
 'use client';
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Menu, Home, User, Wrench, Briefcase, Mail } from 'lucide-react';
 import * as React from 'react';
 
@@ -33,7 +34,7 @@ export function Header() {
                 asChild
                 variant="ghost"
                 size="sm"
-                className="text-foreground/80 focus-visible:ring-primary transition-all duration-200 ease-in-out hover:shadow-[0_0_0_2px_hsl(var(--accent))]"
+                className="text-foreground/80 focus-visible:ring-primary transition-all duration-200 ease-in-out hover:shadow-[0_0_0_2px_hsl(var(--accent))_inset]"
               >
                 <Link href={link.href}>{link.label}</Link>
               </Button>
@@ -49,8 +50,8 @@ export function Header() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[280px] p-0 flex flex-col">
-                <div className="p-5 border-b">
+              <SheetContent side="left" className="w-[280px] p-0 flex flex-col bg-sidebar text-sidebar-foreground">
+                <SheetHeader className="p-5 border-b border-sidebar-border">
                   <SheetTitle asChild>
                     <SheetClose asChild>
                       <Link href="/" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
@@ -58,12 +59,12 @@ export function Header() {
                       </Link>
                     </SheetClose>
                   </SheetTitle>
-                </div>
+                </SheetHeader>
                 <nav className="flex-grow p-4 space-y-2">
                   <SheetClose asChild>
                     <Link 
                       href="/" 
-                      className="flex items-center py-3 px-4 rounded-lg text-foreground/90 hover:bg-accent hover:text-accent-foreground transition-colors"
+                      className="flex items-center py-3 px-4 rounded-lg text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors"
                     >
                       <Home className="mr-3 h-5 w-5" />
                       Home
@@ -73,7 +74,7 @@ export function Header() {
                     <SheetClose asChild key={link.label}>
                       <Link
                         href={link.href}
-                        className="flex items-center py-3 px-4 rounded-lg text-foreground/90 hover:bg-accent hover:text-accent-foreground transition-colors"
+                        className="flex items-center py-3 px-4 rounded-lg text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors"
                       >
                         <link.icon className="mr-3 h-5 w-5" />
                         {link.label}
@@ -81,7 +82,7 @@ export function Header() {
                     </SheetClose>
                   ))}
                 </nav>
-                <div className="p-4 border-t mt-auto">
+                <div className="p-4 border-t border-sidebar-border mt-auto">
                   <p className="text-xs text-muted-foreground text-center">
                     &copy; {new Date().getFullYear()} Ashish K. Rajak
                   </p>
