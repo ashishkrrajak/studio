@@ -21,13 +21,19 @@ export function AboutIntroSection() {
               </CardHeader>
               <CardContent className="p-0">
                 <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
-                  I am a Full-Stack Software Developer with 2.5+ years of experience in building scalable applications using Java, Spring Boot, and Angular. Skilled in back-end development, front-end integration, and REST API design, I am focused on solving complex challenges and delivering influential solutions in Agile environments.
+                  I am a Full-Stack Software Developer passionate about building scalable, production-ready applications using Java, Spring Boot, and Angular. My expertise spans backend engineering, RESTful API design, and frontend integration allowing me to contribute effectively across the entire software development lifecycle.
                 </p>
                 <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
-                  My experience includes implementing high-impact features such as bulk data processing, payment gateway integrations, and API development, alongside critical system migrations and performance optimizations. I thrive in collaborative Agile settings, contributing to the full development lifecycle, from concept and design through to deployment and maintenance, always aiming to build impactful software.
+                  I've worked on impactful features such as bulk data processing, payment gateway integrations, and complex system migrations. These experiences have strengthened my technical foundation and sharpened my ability to think critically, collaborate effectively, and deliver meaningful solutions in Agile environments.
+                </p>
+                <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
+                  But beyond technologies and tools, my journey has been defined by constant learning and growth. I’ve faced technical roadblocks, legacy challenges, and high-pressure situations that tested both my skills and mindset. These moments pushed me to go deeper into debugging, into design thinking, and into becoming more adaptable and resilient.
+                </p>
+                <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
+                  Each challenge has been a stepping stone, helping me evolve not just as a developer, but as a thinker and a problem-solver. I've learned to focus on building solutions that are not only functional, but scalable, maintainable, and user-focused.
                 </p>
                 <p className="text-lg text-foreground/90 mb-8 leading-relaxed">
-                  Beyond coding, I'm an avid learner, always exploring new tools and techniques to enhance my craft and contribute to innovative projects.
+                  Driven by curiosity and a growth mindset, I continuously explore new tools, frameworks, and architectural patterns to refine my craft. I see every project as an opportunity not just to create quality software, but to learn, contribute, and grow.
                 </p>
               </CardContent>
             </div>
