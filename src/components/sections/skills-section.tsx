@@ -1,4 +1,3 @@
-
 // src/components/sections/skills-section.tsx
 import { Badge } from '@/components/ui/badge';
 import { skills } from '@/data/skills-data';
@@ -13,7 +12,7 @@ export function SkillsSection() {
             <Badge 
               key={skill.name} 
               variant="secondary" 
-              className="text-md px-4 py-3 bg-secondary/80 text-secondary-foreground hover:bg-secondary transition-all duration-200 ease-in-out hover:scale-110 cursor-default shadow-md flex items-center space-x-2"
+              className="text-md px-4 py-3 bg-secondary/80 text-secondary-foreground hover:bg-secondary transition-all duration-200 ease-in-out hover:scale-110 cursor-default shadow-md flex items-center justify-center space-x-2 min-w-40" // Added min-w-40 and justify-center
             >
               <skill.icon />
               <span>{skill.name}</span>
@@ -24,5 +23,3 @@ export function SkillsSection() {
     </section>
   );
 }
-
-    
