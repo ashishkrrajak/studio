@@ -14,25 +14,25 @@ export function Header() {
           <nav className="hidden md:flex space-x-4 items-center">
             <Button
               asChild
-              variant="outline"
+              variant="ghost"
               size="sm"
-              className="text-foreground/80 border-border hover:border-primary focus-visible:ring-primary transition-colors"
+              className="text-foreground/80 hover:text-primary focus-visible:ring-primary transition-colors"
             >
               <Link href="/#about">About</Link>
             </Button>
             <Button
               asChild
-              variant="outline"
+              variant="ghost"
               size="sm"
-              className="text-foreground/80 border-border hover:border-primary focus-visible:ring-primary transition-colors"
+              className="text-foreground/80 hover:text-primary focus-visible:ring-primary transition-colors"
             >
               <Link href="/#skills">Skills</Link>
             </Button>
             <Button
               asChild
-              variant="outline"
+              variant="ghost"
               size="sm"
-              className="text-foreground/80 border-border hover:border-primary focus-visible:ring-primary transition-colors"
+              className="text-foreground/80 hover:text-primary focus-visible:ring-primary transition-colors"
             >
               <Link href="/#journey">Journey</Link>
             </Button>
