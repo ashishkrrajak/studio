@@ -159,7 +159,7 @@ html {
 }
 
 /* Flippable Card Styles */
-.contact-flip-card-outer { /* Renamed for specificity */
+.contact-flip-card-outer { 
   perspective: 1000px;
   height: 520px; 
   max-width: 42rem; /* Equivalent to max-w-2xl */
@@ -215,4 +215,24 @@ html {
 
 .animate-fadeInHeroSnippet {
   animation: animateFadeInHeroSnippet 0.5s ease-out forwards;
+}
+
+/* Hero Typing Animation Cursor */
+.hero-cursor {
+  display: inline-block;
+  margin-left: 3px; /* Adjust as needed */
+  background-color: hsl(var(--primary)); /* Use primary color or adjust */
+  width: 4px; /* Adjust for thickness */
+  height: 0.9em; /* Match text height */
+  vertical-align: baseline; /* Align with text baseline */
+  animation: heroBlink 0.7s infinite;
+}
+
+@keyframes heroBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }

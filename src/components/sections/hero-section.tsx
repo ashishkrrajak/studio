@@ -1,28 +1,71 @@
 // src/components/sections/hero-section.tsx
+'use client';
+
+import * as React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { DownloadCVButton } from '@/components/download-cv-button';
 import { Mail } from 'lucide-react';
 import { javaCodeSnippets } from '@/data/hero-data';
-import BlobImage from '../blob-image'; 
+import BlobImage from '../blob-image';
+
+const TYPING_PERIOD = 1500; // Time to pause after typing or deleting
+const TYPING_SPEED_INITIAL = 120;
+const DELETING_SPEED = 60;
 
 export function HeroSection() {
+  const [typedText, setTypedText] = React.useState('');
+  const [isDeleting, setIsDeleting] = React.useState(false);
+  const [loopNum, setLoopNum] = React.useState(0);
+  const [typingSpeed, setTypingSpeed] = React.useState(TYPING_SPEED_INITIAL);
+
+  const fullTitle = "JAVA FULL STACK DEVELOPER";
+
+  React.useEffect(() => {
+    const handleTyping = () => {
+      const currentText = fullTitle;
+      let newText;
+
+      if (isDeleting) {
+        newText = currentText.substring(0, typedText.length - 1);
+      } else {
+        newText = currentText.substring(0, typedText.length + 1);
+      }
+
+      setTypedText(newText);
+
+      if (!isDeleting && newText === currentText) {
+        // Pause at end of typing
+        setTypingSpeed(TYPING_PERIOD);
+        setIsDeleting(true);
+      } else if (isDeleting && newText === '') {
+        // Pause at end of deleting
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setTypingSpeed(TYPING_SPEED_INITIAL / 2); // Short pause before re-typing
+      } else if (isDeleting) {
+        setTypingSpeed(DELETING_SPEED);
+      } else if (!isDeleting) {
+        setTypingSpeed(TYPING_SPEED_INITIAL);
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [typedText, isDeleting, typingSpeed, loopNum, fullTitle]);
+
   return (
     <section id="home" className="relative min-h-[calc(100vh-5rem-70px)] flex items-center justify-center overflow-hidden fade-in-section py-16 md:py-0">
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-primary/5 opacity-50"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="md:pr-8 text-center md:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6">
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-pink-500 to-purple-600 leading-tight">
-                JAVA FULL STACK
-              </span>
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary via-pink-500 to-purple-600 leading-tight mt-1 md:mt-2">
-                DEVELOPER
-              </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-pink-500 to-purple-600 leading-tight min-h-[100px] md:min-h-[150px]">
+              <span>{typedText}</span>
+              <span className="hero-cursor">|</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-10 leading-relaxed max-w-xl mx-auto md:mx-0">
-              Hi, I'm Ashish Kumar Rajak - a <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-accent to-teal-400">Full-Stack Software Developer</span> with 2.5+ years of experience in building scalable applications using Java, Spring Boot, and Angular. Skilled in back-end development, front-end integration, and REST API design, focused on solving complex challenges and delivering influential solutions in Agile environments.
+              Hi, I&apos;m Ashish Kumar Rajak - a <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-accent to-teal-400">Full-Stack Software Developer</span> with 2.5+ years of experience in building scalable applications using Java, Spring Boot, and Angular. Skilled in back-end development, front-end integration, and REST API design, focused on solving complex challenges and delivering influential solutions in Agile environments.
             </p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
               <Button
@@ -44,7 +87,7 @@ export function HeroSection() {
             <div className="absolute inset-0 -m-4 bg-gradient-to-br from-primary/20 via-accent/20 to-transparent rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-700 animate-pulse md:block hidden"></div>
             
             <BlobImage
-              imageUrl="/images/profile_v1.png" 
+              imageUrl="/images/profile.jpg" 
               alt="Ashish Kumar Rajak - Java Full Stack Developer"
               className="relative z-10 w-72 h-72 md:w-96 md:h-96 transform transition-transform duration-500 group-hover:scale-105"
             />
