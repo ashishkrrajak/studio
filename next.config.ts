@@ -41,12 +41,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'camo.githubusercontent.com',
-        port: '',
-        pathname: '/**',
-      },
+      // { // Removed camo.githubusercontent.com as Postman icon is no longer from there
+      //   protocol: 'https',
+      //   hostname: 'camo.githubusercontent.com',
+      //   port: '',
+      //   pathname: '/**',
+      // },
       {
         protocol: 'https',
         hostname: 'raw.githubusercontent.com',
