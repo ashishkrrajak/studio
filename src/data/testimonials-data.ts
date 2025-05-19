@@ -35,7 +35,7 @@ export const testimonials: Testimonial[] = [
     quote: "A dedicated and highly skilled developer. Ashish was instrumental in optimizing our application's performance and scalability. Pleasure to work with!",
     name: "Ankit Raj", // Changed from Chen for variety
     title: "Software Engineer",
-    avatarUrl: "https://placehold.co/100x100.png?text=AR",
+    avatarUrl: "https://media.licdn.com/dms/image/v2/D4D03AQGnSlhvWIJ6GA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1687170478148?e=1753315200&v=beta&t=g_qa0nYha1J99ebmV9ARaNH59-efsLfxYQSCM5T2Jok",
     dataAiHint: "tech professional"
   },
   {
