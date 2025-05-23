@@ -167,6 +167,15 @@ html {
   margin-right: auto;
 }
 
+.testimonial-flip-card-outer {
+  perspective: 1000px;
+  height: 420px; /* Or your desired height for testimonial cards */
+  max-width: 26rem; /* Adjust as needed for single card, or remove if grid handles width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -235,4 +244,15 @@ html {
   50% {
     opacity: 0;
   }
+}
+
+/* Animation for the main layout content to fade in after preloader */
+@keyframes fadeInMainContent {
+  from { opacity: 0; } /* Removed transform: translateY(10px); */
+  to { opacity: 1; }   /* Removed transform: translateY(0); */
+}
+
+.animate-fadeInLayout {
+  animation: fadeInMainContent 0.4s ease-out forwards; /* Changed duration from 0.6s to 0.4s */
+  /* This animation will start when the main content is rendered */
 }

@@ -1,0 +1,41 @@
+/* src/components/preloader.css */
+.preloader-container {
+  position: fixed; /* Takes over the whole screen */
+  inset: 0;
+  background-color: black; /* Use website's background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it's on top */
+  opacity: 0; /* Start transparent for fade-in */
+  animation: preloaderFadeIn 0.5s ease-out forwards, /* Preloader background fades in */
+             preloaderFadeOut 0.7s ease-out 1.3s forwards; /* Preloader starts fading out at 1.3s, total 2s visibility */
+}
+
+.preloader-logo {
+  /* Removed text-specific styles like font-size, font-weight, color */
+  /* Image specific styling will be handled by its aspect ratio and width/height from the component props */
+  /* The animations below are kept as they work on opacity and transform (scale) */
+  opacity: 0; /* Start logo transparent */
+  animation: logoAppearPulse 1.5s ease-out 0.3s forwards, /* Logo appears after 0.3s delay */
+             logoPulse 1.5s 1.3s infinite ease-in-out; /* Logo starts pulsing when preloader begins to fade out */
+}
+
+@keyframes preloaderFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes preloaderFadeOut {
+  to { opacity: 0; }
+}
+
+@keyframes logoAppearPulse {
+  0% { opacity: 0; transform: scale(0.8); }
+  60% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
