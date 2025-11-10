@@ -69,7 +69,7 @@ export function HeroSection() {
               <span className="hero-cursor">|</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-10 leading-relaxed max-w-xl mx-auto md:mx-0">
-              Hi, I&apos;m Ashish Kumar Rajak - a <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-accent to-teal-400">Full-Stack Software Developer</span> with 2.5+ years of experience in building scalable applications using Java, Spring Boot, and Angular. Skilled in back-end development, front-end integration, and REST API design, focused on solving complex challenges and delivering influential solutions in Agile environments.
+              Hi, I&apos;m Ashish Kumar Rajak - a <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-accent to-teal-400">Full-Stack Software Developer</span> with 3+ years of experience in building scalable applications using Java, Spring Boot, and Angular. Skilled in back-end development, front-end integration, and REST API design, focused on solving complex challenges and delivering influential solutions in Agile environments.
             </p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
               <Button
