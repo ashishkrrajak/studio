@@ -6,8 +6,15 @@ import { Building, Code, School } from 'lucide-react';
 export const professionalJourneyPoints: JourneyPoint[] = [
   {
     icon: Building,
+    title: "Senior Software Engineer at LTM",
+    date: "March 2026 -  Present, Kolkata",
+    details: [
+      
+    ]
+  },{
+    icon: Building,
     title: "Software Engineer at Channel play SaaS Pvt Ltd",
-    date: "April 2024 - Present, Kolkata",
+    date: "April 2024 - March 2026, Kolkata",
     details: [
       "Implemented a Bulk Upload module for 50,000+ Excel records, incorporating dynamic field mapping and validation logic, reducing manual data entry time by 40% and increasing throughput by 3 times.",
       "Integrated Cash Free payment gateway, enabling secure, real-time disbursal’s and automated transaction tracking, reducing transaction failures by 15% and improving payment processing time by 20%.",
